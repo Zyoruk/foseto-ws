@@ -8,8 +8,8 @@
  */
 
 $servername = "localhost";
-$username = "root";
-$password = "23793luansi";
+$username = "username"; // add your mysql username
+$password = "password"; // add your password
 $dbname = 'foseto';
 
 // Create connection
