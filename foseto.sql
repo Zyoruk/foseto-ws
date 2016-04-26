@@ -3,11 +3,13 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 11, 2016 at 05:02 PM
+-- Generation Time: Apr 26, 2016 at 05:08 PM
 -- Server version: 5.5.47-0+deb8u1
 -- PHP Version: 5.6.17-0+deb8u1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `foseto`
 --
+CREATE DATABASE IF NOT EXISTS `foseto` DEFAULT CHARACTER SET ascii COLLATE ascii_general_ci;
+USE `foseto`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +30,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `ingredients`
 --
 
+DROP TABLE IF EXISTS `ingredients`;
 CREATE TABLE IF NOT EXISTS `ingredients` (
 `id` int(11) NOT NULL,
   `name` varchar(15) NOT NULL,
@@ -41,18 +46,26 @@ CREATE TABLE IF NOT EXISTS `ingredients` (
 -- Table structure for table `orders`
 --
 
+DROP TABLE IF EXISTS `orders`;
 CREATE TABLE IF NOT EXISTS `orders` (
 `id` int(11) NOT NULL,
-  `client` varchar(10) NOT NULL,
+  `client` int(11) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `expiration` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `total` int(5) NOT NULL DEFAULT '0',
-  `status` varchar(1) NOT NULL DEFAULT 'O'
+  `status` varchar(1) NOT NULL DEFAULT 'O' COMMENT 'o : open , e:expired, p :processed'
 ) ENGINE=InnoDB DEFAULT CHARSET=ascii;
+
+--
+-- RELATIONS FOR TABLE `orders`:
+--   `client`
+--       `user` -> `id`
+--
 
 --
 -- Triggers `orders`
 --
+DROP TRIGGER IF EXISTS `add_Expiration`;
 DELIMITER //
 CREATE TRIGGER `add_Expiration` AFTER INSERT ON `orders`
  FOR EACH ROW UPDATE orders
@@ -67,6 +80,7 @@ DELIMITER ;
 -- Table structure for table `order_ingredient`
 --
 
+DROP TABLE IF EXISTS `order_ingredient`;
 CREATE TABLE IF NOT EXISTS `order_ingredient` (
   `order_id` int(11) NOT NULL,
   `ingredient_id` int(11) NOT NULL,
@@ -74,8 +88,17 @@ CREATE TABLE IF NOT EXISTS `order_ingredient` (
 ) ENGINE=InnoDB DEFAULT CHARSET=ascii;
 
 --
+-- RELATIONS FOR TABLE `order_ingredient`:
+--   `ingredient_id`
+--       `ingredients` -> `id`
+--   `order_id`
+--       `orders` -> `id`
+--
+
+--
 -- Triggers `order_ingredient`
 --
+DROP TRIGGER IF EXISTS `addTotal`;
 DELIMITER //
 CREATE TRIGGER `addTotal` AFTER INSERT ON `order_ingredient`
  FOR EACH ROW BEGIN
@@ -104,6 +127,21 @@ END
 //
 DELIMITER ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+`id` int(11) NOT NULL,
+  `nick` varchar(20) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `email` int(30) NOT NULL,
+  `pass` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=ascii;
+
 --
 -- Indexes for dumped tables
 --
@@ -127,6 +165,12 @@ ALTER TABLE `order_ingredient`
  ADD PRIMARY KEY (`order_id`,`ingredient_id`), ADD KEY `ing_id_fk` (`ingredient_id`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -141,6 +185,11 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `orders`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- Constraints for dumped tables
 --
 
@@ -150,6 +199,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `order_ingredient`
 ADD CONSTRAINT `ing_id_fk` FOREIGN KEY (`ingredient_id`) REFERENCES `ingredients` (`id`) ON DELETE CASCADE,
 ADD CONSTRAINT `order_id_fk` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
