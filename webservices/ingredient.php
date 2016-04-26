@@ -54,6 +54,16 @@ class Ingredient {
 if (isset($_REQUEST["ct"]) && isset($_POST["type"])){
 	$ing = new Ingredient();
 	$ing->checkType($_POST["type"]);
+
+}else if (isset($_REQUEST["sai"])){
+	$ing = new Ingredient();
+	$ing->showAvailableIngredients();
+}else if (isset($_REQUEST["ei"]) && isset($_POST["ingid"]) && isset ($_POST["array"])){
+	$ing = new Ingredient();
+	$ing->editIngredient($_POST["ingid"], $_POST["array"]);
+}else if (isset($_REQUEST["di"]) && isset($_POST["ingid"])){
+	$ing = new Ingredient();
+	$ing->deleteIngredient($_POST["ingid"]);
 }
 
 ?>
