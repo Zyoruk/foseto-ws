@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 26, 2016 at 05:08 PM
+-- Generation Time: Apr 26, 2016 at 05:47 PM
 -- Server version: 5.5.47-0+deb8u1
 -- PHP Version: 5.6.17-0+deb8u1
 
@@ -130,6 +130,24 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `request`
+--
+
+DROP TABLE IF EXISTS `request`;
+CREATE TABLE IF NOT EXISTS `request` (
+  `rid` int(11) NOT NULL,
+  `oid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=ascii;
+
+--
+-- RELATIONS FOR TABLE `request`:
+--   `oid`
+--       `orders` -> `id`
+--
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -165,6 +183,12 @@ ALTER TABLE `order_ingredient`
  ADD PRIMARY KEY (`order_id`,`ingredient_id`), ADD KEY `ing_id_fk` (`ingredient_id`);
 
 --
+-- Indexes for table `request`
+--
+ALTER TABLE `request`
+ ADD PRIMARY KEY (`rid`,`oid`), ADD KEY `oid` (`oid`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -197,8 +221,14 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- Constraints for table `order_ingredient`
 --
 ALTER TABLE `order_ingredient`
-ADD CONSTRAINT `ing_id_fk` FOREIGN KEY (`ingredient_id`) REFERENCES `ingredients` (`id`) ON DELETE CASCADE,
+ADD CONSTRAINT `ing_id_fk` FOREIGN KEY (`ingredient_id`) REFERENCES `ingredients` (`id`),
 ADD CONSTRAINT `order_id_fk` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `request`
+--
+ALTER TABLE `request`
+ADD CONSTRAINT `request_ibfk_1` FOREIGN KEY (`oid`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
