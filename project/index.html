@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<link rel="icon" href="../../favicon.ico">
+		<link href="bootstrap.css" rel="stylesheet">
+		<link href="bootstrap-custom.css" rel="stylesheet">
+		<link href="ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+		<title>Foseto</title>
+	</head>
+
+	<body>
+
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"><img src="logo_foseto_mini.png"/></a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index.html">Inicio</a></li>
+						<li><a href="misordenes.html">Mis Órdenes</a></li>
+						<li><a href="ordenes.html">Crear Orden</a></li>
+						<li><a href="comentarios.html">Comentarios</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active" id="person_link"><a href="perfil.html">Mi Perfil<span class="sr-only"></span></a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+		<div class="jumbotron">
+			<div class="page-header">
+
+				<ul class="nav nav-tabs">
+					<li class="active"><a data-toggle="tab" href="#menu1">Iniciar Sesión</a></li>
+					<li><a data-toggle="tab" href="#menu2">Registrarse</a></li>
+				</ul>
+
+				<div class="tab-content">
+						<div id="menu1" class="tab-pane fade in active">
+						<div class="panel-body">
+							<h3>Iniciar Sesi&oacute;n</h3>
+							<center>
+								<form class="form-horizontal" role="form" action="../webservices/user.php?log&email=email&pass=pass" method="post">
+									<div class ="col-xs-1"></div>
+									<div class="col-xs-8">
+										<div class="form-group">
+											<label class="control-label col-sm-3" for="email">Email:</label>
+											<div class="col-sm-9">
+												<input type="email" class="form-control" name="email" id="email" placeholder="Ingrese email" required="required">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-sm-3" for="pass">Contraseña:</label>
+											<div class="col-sm-9">
+												<input type="password" class="form-control" name="pass" id="pass"  required="required" placeholder="Ingrese contraseña">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-offset-2 col-sm-10">
+												<h6><em>No est&aacute; registrado? Clic <a data-toggle="tab" href="#menu2">aquí</a></em></h6>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-offset-2 col-sm-10">
+												<button type="submit" class="btn btn-default">Ingresar</button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</center>
+					</div>
+					</div>
+					<div id="menu2" class="tab-pane fade">
+						<div class="panel-body">
+							<h3>Registrarse</h3>
+							<center>
+								<form class="form-horizontal" role="form" action="../webservices/user.php?reg&name=name&nick=nick&email=email&pass=pass" method="post">
+									<div class ="col-xs-1"></div>
+									<div class="col-xs-8">
+										<div class="form-group">
+											<label class="control-label col-sm-3" for="name">Nombre:</label>
+											<div class="col-sm-9">
+												<input type="name" class="form-control" name="name" id="name" required="required" placeholder="Ingrese nombre">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-sm-3" for="email">Email:</label>
+											<div class="col-sm-9">
+												<input type="email" class="form-control" name="email" required="required" id="email" placeholder="Ingrese email">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-sm-3" for="nick">Usuario:</label>
+											<div class="col-sm-9">
+												<input type="user" class="form-control" name="nick" id="nick" required="required" placeholder="Ingrese nombre de usuario">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-sm-3" for="pass">Contraseña:</label>
+												<div class="col-sm-9">
+													<input type="password" class="form-control" name="pass" required="required" id="pass" placeholder="Ingrese contraseña">
+												</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-offset-2 col-sm-10">
+												<button type="submit" value="Submit"class="btn btn-default">Registrar</button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+		<script src="bootstrap.min.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="ie10-viewport-bug-workaround.js"></script>
+	</body>
+</html>
