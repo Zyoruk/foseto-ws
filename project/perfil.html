@@ -55,15 +55,16 @@
 						<td>Correo Electrónico: </td>
 						<td><em id="person_email">correo@correo.com</em></td>
 						<td>
-							<button type="button" class="btn btn-default btn-xs" aria-label="Edit" data-toggle="modal" data-target="#modal_correo">
-								<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar
-							</button>
 						</td>
 					</tr>
 					<tr>
 						<td>Nombre de Usuario: </td>
 						<td><em id="person_nick">usuario</em></td>
-						<td></td>
+						<td>
+							<button type="button" class="btn btn-default btn-xs" aria-label="Edit" data-toggle="modal" data-target="#modal_correo">
+								<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar
+							</button>
+						</td>
 					</tr>
 					<tr>
 						<td>Contraseña: </td>
@@ -108,22 +109,22 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">Editar Correo Electrónico</h4>
+						<h4 class="modal-title" id="myModalLabel">Editar Usuario</h4>
 					</div>
+					<form class="form-horizontal" role="form" action="../webservices/user.php?mn&nick=nick" method="post">
 					<div class="modal-body">
-						<form class="form-horizontal" role="form">
 							<div class="form-group">
-								<label class="control-label col-sm-3" for="name">Correo Electrónico:</label>
+								<label class="control-label col-sm-3" for="name">Usuario:</label>
 								<div class="col-sm-9">
-									<input type="name" class="form-control" id="name" value="correo@correo.com">
+									<input type="name" class="form-control" name="nick" id="nick" placeholder="Ingrese Usuario">
 								</div>
 							</div>
-						</form>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-						<button type="button" class="btn btn-primary">Guardar</button>
-					</div>
+						<button type="button submit" class="btn btn-primary">Guardar</button>
+					</div
+					</form>
 				</div>
 			</div>
 		</div>
@@ -135,21 +136,21 @@
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<h4 class="modal-title" id="myModalLabel">Editar Contraseña</h4>
 					</div>
+					<form class="form-horizontal" role="form" action="../webservices/user.php?mp&pass=pass" method="post">
 					<div class="modal-body">
-						<form class="form-horizontal" role="form">
 							<div class="form-group">
 								<label class="control-label col-sm-3" for="name">Nueva Contraseña:</label>
 								<div class="col-sm-9">
-									<input type="password" class="form-control" id="pwd" placeholder="Ingrese contraseña">
+									<input type="password" class="form-control" name = "pass" id="pass" placeholder="Ingrese contraseña">
 								</div>
 							</div>
-						</form>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-						<button type="button" class="btn btn-primary">Guardar</button>
+						<button type="button submit" class="btn btn-primary">Guardar</button>
 					</div>
 				</div>
+				</form>
 			</div>
 		</div>
 
