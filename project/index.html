@@ -7,10 +7,10 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<link rel="icon" href="../../favicon.ico">
+		<link rel="icon" href="favicon.ico">
 		<link href="bootstrap.css" rel="stylesheet">
 		<link href="bootstrap-custom.css" rel="stylesheet">
-		<link href="ie10-viewport-bug-workaround.css" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
 
 		<title>Foseto</title>
 	</head>
@@ -31,12 +31,19 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="index.html">Inicio</a></li>
-						<li><a href="misordenes.html">Mis Órdenes</a></li>
-						<li><a href="ordenes.html">Crear Orden</a></li>
+						<li id="link_myOrders"><a href="misordenes.html">Mis Órdenes</a></li>
+						<li id="link_Orders"><a href="ordenes.html">Crear Orden</a></li>
 						<li><a href="comentarios.html">Comentarios</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active" id="person_link"><a href="perfil.html">Mi Perfil<span class="sr-only"></span></a></li>
+						<li class="dropdown active" id="link_person">
+							<a href="#" id="link_person_a" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+							<ul class="dropdown-menu">
+								<li><a href="perfil.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Mi perfil</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Cerrar Sesión</a></li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -44,7 +51,7 @@
 
 		<div class="container">
 		<div class="jumbotron">
-			<div class="page-header">
+			<div class="page-header" id="tabs_login_register">
 
 				<ul class="nav nav-tabs">
 					<li class="active"><a data-toggle="tab" href="#menu1">Iniciar Sesión</a></li>
@@ -71,7 +78,9 @@
 												<input type="password" class="form-control" name="pass" id="pass"  required="required" placeholder="Ingrese contraseña">
 											</div>
 										</div>
-										<h4 id="error_text"></h4>
+										<div class="error_div col-sm-offset-2 col-sm-10">
+											<h5 id="error_text"></h5>
+										</div>
 										<div class="form-group">
 											<div class="col-sm-offset-2 col-sm-10">
 												<h6><em>No est&aacute; registrado? Clic <a data-toggle="tab" href="#menu2">aquí</a></em></h6>
@@ -130,6 +139,15 @@
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="hidden_menu" id="hidden_menu">
+					<h2>Bienvenido a Foseto</h2>
+					<ul>
+						<li><a href="ordenes.html"><span class="glyphicon glyphicon-plus glyphicon_style" aria-hidden="true"></span><span class="span_text">Nueva Orden</span></a></li>
+						<li><a href="misordenes.html"><span class="glyphicon glyphicon-time glyphicon_style" aria-hidden="true"></span><span class="span_text">Mis Órdenes</span></a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
 		</div>
 
@@ -137,16 +155,38 @@
 		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 		<script src="bootstrap.min.js"></script>
 		<script src="jquery.cookie.js"></script>
-		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		<script src="ie10-viewport-bug-workaround.js"></script>
 		<script>
 		$(document).ready(function () {
-			if($.cookie("error") != null){
 
-				$('#error_text').html($.cookie("error"));
-				//alert($.cookie("error"));
+			if($.cookie("userInfo") == null){
+				$("#hidden_menu").hide();
+				$("#link_Orders").hide();
+				$("#link_myOrders").hide();
+				$("#link_person").hide();
+			}else if($.cookie("userInfo") != null){
+				$("#tabs_login_register").hide();
+				$("#hidden_menu").show();
+				$("#link_Orders").show();
+				$("#link_myOrders").show();
+				$("#link_person").show();
+
+				$.ajax({
+					type: "GET",
+					url: "../webservices/profile.php",
+					success: function(data){
+					var obj = $.parseJSON(data);
+					//alert(obj.name);
+					$('#link_person_a').html("Hola, " + obj.name + " " + '<span class="caret"></span>');
+					}
+				});
 			}
 
+
+			if($.cookie("error") != null){
+				$('#error_text').html($.cookie("error"));
+				$.cookie("error", "", { path : '/' });
+				//alert($.cookie("error"));
+			}
 		});
 		</script>
 	</body>

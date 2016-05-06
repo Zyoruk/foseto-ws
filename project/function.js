@@ -14,6 +14,29 @@ function restscore(value_before){
 
 $(document).ready(function () {
 
+  if($.cookie("userInfo") == null){
+    $("#hidden_menu").hide();
+    $("#link_Orders").hide();
+    $("#link_myOrders").hide();
+    $("#link_person").hide();
+  }else if($.cookie("userInfo") != null){
+    $("#tabs_login_register").hide();
+    $("#hidden_menu").show();
+    $("#link_Orders").show();
+    $("#link_myOrders").show();
+    $("#link_person").show();
+
+    $.ajax({
+      type: "GET",
+      url: "../webservices/profile.php",
+      success: function(data){
+      var obj = $.parseJSON(data);
+      //alert(obj.name);
+      $('#link_person_a').html("Hola, " + obj.name + " " + '<span class="caret"></span>');
+      }
+    });
+  }
+
   var $class_name, $class_id;
   $("#precio-radio_1").hide();
   $("#precio-radio_2").hide();

@@ -1,3 +1,5 @@
+
+
 .table-fixed thead {
   width: 97%;
 }
@@ -15,80 +17,80 @@
 
 .OrdersList
 {
-  overflow-x:scroll;
-  overflow-y:scroll;
-  width:100%;
-  height: 515px;
-  vertical-align: top;
-  padding: 0 0;
+    overflow-x:scroll;
+    overflow-y:scroll;
+    width:100%;
+	height: 515px;
+	vertical-align: top;
+    padding: 0 0;
 }
 
 .MyOrdersList
 {
-  overflow-x:scroll;
-  overflow-y:scroll;
-  width:100%;
-  height: 535px;
-  vertical-align: top;
-  padding: 0 0;
-  border-color: #8A321F;
+    overflow-x:scroll;
+    overflow-y:scroll;
+    width:100%;
+	height: 535px;
+	vertical-align: top;
+    padding: 0 0;
+	border-color: #8A321F;
 }
 
 .MyOrdersinProcessList
 {
-  overflow-x:scroll;
-  overflow-y:scroll;
-  width:100%;
-  height: 300px;
-  vertical-align: top;
-  padding: 0 0;
+    overflow-x:scroll;
+    overflow-y:scroll;
+    width:100%;
+	height: 300px;
+	vertical-align: top;
+    padding: 0 0;
 }
 
 .OrdersItem
 {
-  border:1px solid black;
-  border-radius: 25px;
-  vertical-align: top;
-  display: block;
-  width: 260px;
-  margin-left: 10px;
-  border-color: #8A321F;
+    border:1px solid black;
+	border-radius: 25px;
+	vertical-align: top;
+	display: block;
+	width: 260px;
+	margin-left: 10px;
+	border-color: #8A321F;
 }
 
 .IngredientsList
 {
-  overflow-x:scroll;
-  overflow-y:hidden;
-  width:100%;
-  height: 230px;
-  vertical-align: top;
-  padding: 0 0;
+    overflow-x:scroll;
+    overflow-y:hidden;
+    width:100%;
+	height: 230px;
+	vertical-align: top;
+    padding: 0 0;
 }
 
 .IngredientsItem
 {
-  border:1px solid black;
-  border-radius: 25px;
-  vertical-align: top;
-  width: 150px;
-  margin-left: 10px;
-  border-color: #8A321F;
+    border:1px solid black;
+	border-radius: 25px;
+	vertical-align: top;
+	width: 150px;
+	margin-left: 10px;
+	border-color: #8A321F;
 }
 
 .IngredientsItem img
 {
-  margin-left: -3px;
+	margin-left: -3px;
 }
 
 .IngredientsItem img:hover
 {
-  opacity: 0.4;
-  filter: alpha(opacity=40);
+	opacity: 0.4;
+    filter: alpha(opacity=40);
 }
 
 .IngredientsItem .radio
 {
-  margin: 0 5px 0 5px;
+	margin: 0 5px 0 5px;
 
 }
 
@@ -97,5 +99,83 @@
 }
 
 input[type=checkbox] {
-  display: none;
+    display: none;
+}
+
+#top-link-block.affix-top {
+    position: absolute; /* allows it to "slide" up into view */
+    bottom: -82px; /* negative of the offset - height of link element */
+    left: 10px; /* padding from the left side of the window */
+}
+#top-link-block.affix {
+    position: fixed; /* keeps it on the bottom once in view */
+    top: 118px; /* height of link element */
+    right: 10px; /* padding from the left side of the window */
+}
+
+#panel_price{
+	width:75px;
+	position: fixed; /* keeps it on the bottom once in view */
+    top: 118px; /* height of link element */
+    right: 10px; /* padding from the left side of the window */
+}
+
+.error_div h5{
+	color: red;
+}
+
+.hidden_menu{
+	float:right;
+    position:relative;
+    left:-50%;
+    text-align:left;
+	height: auto;
+}
+
+.hidden_menu h2{
+	font-size: 250%;
+	position:relative;
+    left:65%;
+	padding-top: 25px;
+}
+
+.hidden_menu ul{
+	list-style-type: none;
+	position:relative;
+    left:40%;
+}
+
+.hidden_menu li{
+	float:left;
+	border:1px solid black;
+	border-radius: 25px;
+	vertical-align: top;
+	display: block;
+	margin-left: 40px;
+	margin-top: 40px;
+	width: 200px;
+	border-color: #8A321F;
+	text-align: center;
+}
+
+.hidden_menu li:hover{
+	background: #8A321F;
+}
+
+.span_text{
+	display: block;
+	font-size: 15px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.glyphicon_style{
+	font-size: 45px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.hidden_menu a{
+	display:block;
+	text-decoration: none;
 }

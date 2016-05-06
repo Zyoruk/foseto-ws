@@ -6,14 +6,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		
+
 		<link rel="icon" href="../../favicon.ico">
 		<link href="bootstrap.css" rel="stylesheet">
 		<link href="style.css" rel="stylesheet">
 		<link href="bootstrap-custom.css" rel="stylesheet">
 		<link href="ie10-viewport-bug-workaround.css" rel="stylesheet">
 		<link href="navbar-fixed-top.css" rel="stylesheet">
-		
+
 		<title>Foseto</title>
 	</head>
 
@@ -37,12 +37,19 @@
 						<li><a href="comentarios.html">Comentarios</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="perfil.html">Mi Perfil<span class="sr-only"></span></a></li>
+						<li class="dropdown active" id="link_person">
+							<a href="#" id="link_person_a" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+							<ul class="dropdown-menu">
+								<li><a href="perfil.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Mi perfil</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Cerrar Sesión</a></li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 			</div>
 		</nav>
-		
+
 		<div class="container">
 		<div class="jumbotron">
 			<div class="page-header">
@@ -181,7 +188,7 @@
 									</li>
 								</ul>
 							</div>
-						</div>	
+						</div>
 					</div>
 				</div>
 				<div class="panel panel-default">
@@ -192,7 +199,7 @@
 					</div>
 					<div id="collapse2" class="panel-collapse collapse">
 						<div class="panel-body">
-						
+
 						<div class="MyOrdersinProcessList" id="scrollbar_style">
 							<ul class="list-inline">
 								<li class="OrdersItem">
@@ -231,8 +238,8 @@
 								</li>
 							</ul>
 						</div>
-						
-						</div>	
+
+						</div>
 					</div>
 				</div>
 			</div>
@@ -242,9 +249,8 @@
 		<script src="function.js"></script>
 		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 		<script src="bootstrap.min.js"></script>
-		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		<script src="ie10-viewport-bug-workaround.js"></script>
-		<!--<script src="jquery-2.2.2.min.js"></script>-->
-		
+		<script src="jquery.cookie.js"></script>
+
+
 	</body>
 </html>
