@@ -12,6 +12,11 @@ function restscore(value_before){
   $("#precio-subtotal").text(score - value_before);
 }
 
+function logOut(){
+  $.removeCookie('userInfo', { path: '/' });
+  location.href='index.html';
+}
+
 $(document).ready(function () {
 
   if($.cookie("userInfo") == null){
