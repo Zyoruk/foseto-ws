@@ -43,15 +43,21 @@ class User{
 		$conn = mysql_connect ( $servername, $username, $password, TRUE );
 		mysql_select_db ($dbname, $conn );
 		//Hasta aqui
+		$cookieError="error_reg";
 		$query = "SELECT 1 FROM user WHERE email = '".$email."';";
 		$result = mysql_query($query);
 		if (mysql_num_rows($result) == 0){
 			$query = "INSERT INTO user (nick,name,email,pass) VALUES ('".$nick."','".$name."','".$email."','".$pass."')";
-			header('location:../project/ordenes.html');
+			$cookieErrorValue="";
+			setcookie($cookieError,$cookieErrorValue,0,"/");
+			header('location:../project/index.html');
 			if (! mysql_query ( $query )) {
 				die ( "{'error' : 'Error description:" . mysql_error ( $conn ) . " '}" );
 			}
 		}else{
+			$cookieErrorValue="Correo ya existe";
+			setcookie($cookieError,$cookieErrorValue,0,"/");
+			header('location:../project/index.html#menu2');
 			die ( "{'error' : 'Nick already exists'}" );
 		}
 	}
@@ -144,6 +150,9 @@ class User{
 		if (! mysql_query ( $query )) {
 			die ( "{'error' : 'Error description:" . mysql_error ( $conn ) . " '}" );
 		}
+		$cookieMod="modify";
+		$cookieValueMod = 1;
+		setcookie($cookieMod,$cookieValueMod,0,"/");
 		header('location:../project/perfil.html');
 	}
 	function modifyName($name){
@@ -161,6 +170,10 @@ class User{
 		if (! mysql_query ( $query )) {
 			die ( "{'error' : 'Error description:" . mysql_error ( $conn ) . " '}" );
 		}
+
+		$cookieMod="modify";
+		$cookieValueMod = 1;
+		setcookie($cookieMod,$cookieValueMod,0,"/");
 		header('location:../project/perfil.html');
 	}
 	function modifyPass($pass){
@@ -178,9 +191,13 @@ class User{
 		if (! mysql_query ( $query )) {
 			die ( "{'error' : 'Error description:" . mysql_error ( $conn ) . " '}" );
 		}
+		$cookieMod="modify";
+		$cookieValueMod = 1;
+		setcookie($cookieMod,$cookieValueMod,0,"/");
 		header('location:../project/perfil.html');
 	}
 }
+
 if (isset ( $_REQUEST ["log"] ) && isset ( $_POST ["email"] ) && isset ( $_POST ["pass"] )) {
 	$user = new User ();
 	$user->login ( $_POST ["email"], md5($_POST ["pass"]) );
