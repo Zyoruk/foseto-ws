@@ -41,7 +41,7 @@
 							<ul class="dropdown-menu">
 								<li><a href="perfil.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Mi perfil</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Cerrar Sesión</a></li>
+								<li><a href="#" onclick="logOut()"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Cerrar Sesión</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -127,6 +127,9 @@
 													<input type="password" class="form-control" name="pass" required="required" id="pass" placeholder="Ingrese contraseña">
 												</div>
 										</div>
+										<div class="error_div col-sm-offset-2 col-sm-10">
+											<h5 id="error_textreg"></h5>
+										</div>
 										<div class="form-group">
 											<div class="col-sm-offset-2 col-sm-10">
 												<button type="submit" value="Submit"class="btn btn-default">Registrar</button>
@@ -155,39 +158,36 @@
 		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 		<script src="bootstrap.min.js"></script>
 		<script src="jquery.cookie.js"></script>
+		<script src="function.js"></script>
 		<script>
 		$(document).ready(function () {
 
-			if($.cookie("userInfo") == null){
-				$("#hidden_menu").hide();
-				$("#link_Orders").hide();
-				$("#link_myOrders").hide();
-				$("#link_person").hide();
-			}else if($.cookie("userInfo") != null){
-				$("#tabs_login_register").hide();
-				$("#hidden_menu").show();
-				$("#link_Orders").show();
-				$("#link_myOrders").show();
-				$("#link_person").show();
+			var hash = window.location.hash;
+		  hash && $('ul.nav a[href="' + hash + '"]').tab('show');
 
-				$.ajax({
-					type: "GET",
-					url: "../webservices/profile.php",
-					success: function(data){
-					var obj = $.parseJSON(data);
-					//alert(obj.name);
-					$('#link_person_a').html("Hola, " + obj.name + " " + '<span class="caret"></span>');
-					}
-				});
-			}
+		  $('.nav-tabs a').click(function (e) {
+		    $(this).tab('show');
+		    var scrollmem = $('body').scrollTop() || $('html').scrollTop();
+		    window.location.hash = this.hash;
+		    $('html,body').scrollTop(scrollmem);
+		  });
 
+			$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+			    var target = this.href.split('#');
+			    $('.nav a').filter('a[href="#'+target[1]+'"]').tab('show');
+			});
 
 			if($.cookie("error") != null){
 				$('#error_text').html($.cookie("error"));
 				$.cookie("error", "", { path : '/' });
 				//alert($.cookie("error"));
 			}
-		});
+			if($.cookie("error_reg") != null){
+				$('#error_textreg').html($.cookie("error_reg"));
+				$.cookie("error_reg", "", { path : '/' });
+				//alert($.cookie("error"));
+			}
+			});
 		</script>
 	</body>
 </html>
