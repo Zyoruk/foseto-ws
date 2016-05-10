@@ -40,7 +40,7 @@
 							<ul class="dropdown-menu">
 								<li><a href="perfil.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Mi perfil</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Cerrar Sesión</a></li>
+								<li><a href="#" onclick="logOut()"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Cerrar Sesión</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -51,7 +51,7 @@
 		<div class="container">
 			<div class="jumbotron">
 				<br>
-
+					<div class="alert alert-success" id="success-alert" role="alert">Cambios realizados con éxito</div>
 
 						<h2 id="person_name"></h2>
 
@@ -166,6 +166,7 @@
 		<script src="jquery.cookie.js"></script>
 		<script>
 		$(document).ready(function () {
+			$("#success-alert").hide();
 			$.ajax({
 				type: "GET",
 				url: "../webservices/profile.php",
@@ -176,6 +177,15 @@
 				$('#person_nick').html(obj.nick);
 				}
 			});
+
+			if($.cookie("modify")==1){
+				$.removeCookie('modify', { path: '/' });
+				$("#success-alert").alert();
+        $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+        $("#success-alert").alert('close');
+			});
+		}
+
 		});
 		</script>
     </body>
