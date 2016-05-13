@@ -65,8 +65,8 @@ class Order {
 	 * Receives the ID and returns all the data from the order.
 	 * */
 	
-	function getOrderData($pid){
-		$id = $id;
+	function getOrderData($oid){
+		$id = $oid;
 	
 		//Get all the data from the order
 	
@@ -103,8 +103,11 @@ class Order {
 	}
 	
 	
-	function deleteOrder(){
-	
+	function deleteOrder($oid){
+		$query = "DELETE FROM orders WHERE oid = ".$oid.";";
+		if (!mysql_query($query )){
+			die ("{'error' : 'Error description:".mysql_error($conn)." '}");
+		}
 	}
 	
 	
@@ -120,6 +123,16 @@ if (isset ($_REQUEST['co']) &&isset($_REQUEST['cname']) && isset($_POST['ing[]']
 	
 	$order = new Order();
 	$order->getOrderData($_REQUEST['id']);
+	
+}else if (isset($_REQUEST['eo']) && isset($_REQUEST['oid']) && isset($_REQUEST['ingarray'])){
+	
+	$order = new Order();
+	$order->editOrder($_REQUEST['oid'] , $_REQUEST['ingarray']);
+
+}else if (isset($_REQUEST['do']) && isset($_REQUEST['id'])){
+	
+	$order = new Order();
+	$order->deleteOrder($_REQUEST['id']);
 	
 }else{
 	die ( "{'error':'Check params.'}" );
