@@ -137,7 +137,7 @@ if (isset ( $_REQUEST ["log"] ) && isset ( $_POST ["nick"] ) && isset ( $_POST [
 } else if (isset($_REQUEST ["cao"]) && isset($_POST ["uid"])) {
 	$user = new User ();
 	$user->checkUserActiveOrders ( $_POST ["uid"] );
-} else if (isset($_REQUEST ["cud"]) && isset($_POST ["uid"] )) {
+} else if (isset($_REQUEST ["cud"]) && isset($_POST ["uid"] )&& isset($_POST ["array"] )) {
 	$user = new User ();
-	$user->changeUserData ( $_POST ["uid"] );
+	$user->changeUserData ( $_POST ["uid"] , $_POST["array"]);
 }
