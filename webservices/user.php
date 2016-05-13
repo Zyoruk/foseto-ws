@@ -201,33 +201,37 @@ class User{
 if (isset ( $_REQUEST ["log"] ) && isset ( $_POST ["email"] ) && isset ( $_POST ["pass"] )) {
 	$user = new User ();
 	$user->login ( $_POST ["email"], md5($_POST ["pass"]) );
+	
 }	else if (isset ( $_REQUEST ["reg"] ) && isset ( $_POST ["name"] ) && isset ( $_POST ["nick"] ) && isset ( $_POST ["email"] ) && isset ( $_POST ["pass"] )) {
 	$user = new User ();
 	$user->register ( $_POST ["name"], $_POST ["nick"], $_POST ["email"],md5( $_POST ["pass"]) );
+	
 } else if (isset($_REQUEST["cui"]) && isset($_POST["uid"])){
 	$user = new User ();
 	$user->checkUserInfo($_POST["uid"]);
+	
 } else if (isset($_REQUEST["cro"]) && isset($_POST["uid"])){
 	$user = new User ();
 	$user->checkUserRecentOrders($_POST["uid"]);
+	
 } else if (isset($_REQUEST ["cao"]) && isset($_POST ["uid"])) {
 	$user = new User ();
 	$user->checkUserActiveOrders ( $_POST ["uid"] );
+	
 } else if (isset($_REQUEST ["cud"]) && isset($_POST ["uid"] )&& isset($_POST ["array"] )) {
 	$user = new User ();
-<<<<<<< HEAD
 	$user->changeUserData ( $_POST ["uid"] , $_POST["array"]);
-}
-=======
-	$user->changeUserData ( $_POST ["uid"] );
+	
 } else if (isset($_REQUEST ["mn"]) && isset($_POST ["nick"] )){
 	$user = new User();
 	$user->modifyNick($_POST ["nick"]);
+	
 } else if (isset($_REQUEST ["mp"]) && isset($_POST ["pass"] )){
 	$user = new User();
 	$user->modifyPass(md5($_POST ["pass"]));
+	
 } else if (isset($_REQUEST ["mna"]) && isset($_POST ["name"] )){
 	$user = new User();
 	$user->modifyName($_POST ["name"]);
+
 }
->>>>>>> 52a87adcb9fc40079005894dd924e0f40bbd084e
