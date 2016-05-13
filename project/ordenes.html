@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon" href="../../favicon.ico">
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="bootstrap-custom.css" rel="stylesheet">
+    <link href="ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="navbar-fixed-top.css" rel="stylesheet">
+
+    <title>Foseto</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="logo_foseto_mini.png"/></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="misordenes.html">Mis Órdenes</a></li>
+            <li class="active"><a href="ordenes.html">Crear Orden</a></li>
+            <li><a href="comentarios.html">Comentarios</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+						<li class="dropdown active" id="link_person">
+							<a href="#" id="link_person_a" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+							<ul class="dropdown-menu">
+								<li><a href="perfil.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Mi perfil</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="#" onclick="logOut()"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Cerrar Sesión</a></li>
+							</ul>
+						</li>
+					</ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="jumbotron">
+        <div class="page-header">
+          <h1>Crear una orden</h1>
+        </div>
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Combos</a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+              <div class="panel-body">
+
+                <div class="OrdersList" id="scrollbar_style">
+                  <ul class="list-inline">
+                    <li class="OrdersItem">
+                      <div id="container">
+                        <center><h3><strong>Combo 1</strong></h3></center>
+                        <center><h5><strong>Nombre Combo</strong></h5></center>
+                        <center><h4>₡0</h4></center>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Toppings</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Helados</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Adicionales</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <center>
+                          <p>
+                            <button type="button" class="btn btn-default btn-xs">Editar Orden</button>
+                            <button type="button" class="btn btn-default btn-xs">Pedir Orden</button>
+                          </p>
+                        </center>
+                      </div>
+                    </li>
+                    <li class="OrdersItem">
+                      <div id="container">
+                        <center><h3><strong>Combo 2</strong></h3></center>
+                        <center><h5><strong>Nombre Combo</strong></h5></center>
+                        <center><h4>₡0</h4></center>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Toppings</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Helados</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Adicionales</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <center>
+                          <p>
+                            <button type="button" class="btn btn-default btn-xs">Editar Orden</button>
+                            <button type="button" class="btn btn-default btn-xs">Pedir Orden</button>
+                          </p>
+                        </center>
+                      </div>
+                    </li>
+                    <li class="OrdersItem">
+                      <div id="container">
+                        <center><h3><strong>Combo 3</strong></h3></center>
+                        <center><h5><strong>Nombre Combo</strong></h5></center>
+                        <center><h4>₡0</h4></center>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Toppings</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Helados</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Adicionales</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <center>
+                          <p>
+                            <button type="button" class="btn btn-default btn-xs">Editar Orden</button>
+                            <button type="button" class="btn btn-default btn-xs">Pedir Orden</button>
+                          </p>
+                        </center>
+                      </div>
+                    </li>
+                    <li class="OrdersItem">
+                      <div id="container">
+                        <center><h3><strong>Combo 4</strong></h3></center>
+                        <center><h5><strong>Nombre Combo</strong></h5></center>
+                        <center><h4>₡0</h4></center>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Toppings</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Helados</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Adicionales</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <center>
+                          <p>
+                            <button type="button" class="btn btn-default btn-xs">Editar Orden</button>
+                            <button type="button" class="btn btn-default btn-xs">Pedir Orden</button>
+                          </p>
+                        </center>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Historial de Ordenes</a>
+              </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+              <div class="panel-body">
+
+                <div class="OrdersList" id="scrollbar_style">
+                  <ul class="list-inline">
+                    <li class="OrdersItem">
+                      <div id="container">
+                        <center><h3><strong>Orden 1</strong></h3></center>
+                        <center><h5><strong>1 Febrero 2016</strong></h5></center>
+                        <center><h4>₡0</h4></center>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Toppings</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Chispas de Chocolate" data-toggle="popover" data-trigger="focus"><img src="topping1.png" width="30" height="31" class="img-circle"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Helados</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Helado Mora" data-toggle="popover" data-trigger="focus"><img src="helado1.png" width="30" height="31" class="img-circle"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Helado Naranja" data-toggle="popover" data-trigger="focus"><img src="helado2.png" width="30" height="31" class="img-circle"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Helado Chocolate" data-toggle="popover" data-trigger="focus"><img src="helado3.png" width="30" height="31" class="img-circle"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Adicionales</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Barquillo de Vainilla" data-toggle="popover" data-trigger="focus"><img src="adicional1.png" width="30" height="31" class="img-circle"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <center>
+                          <p>
+                            <button type="button" class="btn btn-default btn-xs">Editar Orden</button>
+                            <button type="button" class="btn btn-default btn-xs">Pedir Orden</button>
+                          </p>
+                        </center>
+                      </div>
+                    </li>
+                    <li class="OrdersItem">
+                      <div id="container">
+                        <center><h3><strong>Orden 1</strong></h3></center>
+                        <center><h5><strong>1 Febrero 2016</strong></h5></center>
+                        <center><h4>₡0</h4></center>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Toppings</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Helados</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Adicionales</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <center>
+                          <p>
+                            <button type="button" class="btn btn-default btn-xs">Editar Orden</button>
+                            <button type="button" class="btn btn-default btn-xs">Pedir Orden</button>
+                          </p>
+                        </center>
+                      </div>
+                    </li>
+                    <li class="OrdersItem">
+                      <div id="container">
+                        <center><h3><strong>Orden 1</strong></h3></center>
+                        <center><h5><strong>1 Febrero 2016</strong></h5></center>
+                        <center><h4>₡0</h4></center>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Toppings</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Helados</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Adicionales</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <center>
+                          <p>
+                            <button type="button" class="btn btn-default btn-xs">Editar Orden</button>
+                            <button type="button" class="btn btn-default btn-xs">Pedir Orden</button>
+                          </p>
+                        </center>
+                      </div>
+                    </li>
+                    <li class="OrdersItem">
+                      <div id="container">
+                        <center><h3><strong>Orden 1</strong></h3></center>
+                        <center><h5><strong>1 Febrero 2016</strong></h5></center>
+                        <center><h4>₡0</h4></center>
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Toppings</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Helados</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Helado Mora" data-toggle="popover" data-trigger="focus"><img src="helado1.png" width="30" height="31"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Adicionales</div>
+                            <div class="panel-body">
+                              <div class="content">
+                                <ul class="list-inline">
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <center>
+                          <p>
+                            <button type="button" class="btn btn-default btn-xs">Editar Orden</button>
+                            <button type="button" class="btn btn-default btn-xs">Pedir Orden</button>
+                          </p>
+                        </center>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <form action="../webservices/orders.php?ci" method="post">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Crear nueva orden</a>
+                </h4>
+              </div>
+            </form>
+            <div id="collapse3" class="panel-collapse collapse">
+              <form form action="../webservices/order.php?co" method="post">
+                <div class="panel-body">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Helados</div>
+                    <div class="panel-body">
+                      <div class="content">
+                        <form role="form">
+                          <div class="IngredientsList" id="scrollbar_style">
+                            <ul class="list-inline">
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente1" id="radio_1" value=""><img src="helado1.png"/></label>
+                                  </div>
+                                  <center><strong>Mora</strong></center>
+                                  <div class="radio radio_1">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_1" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_1" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_1" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente2" id="radio_2" value=""><img src="helado2.png"/></label>
+                                  </div>
+                                  <center><strong>Naranja</strong></center>
+                                  <div class="radio radio_2">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_2" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_2" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_2" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente3" id="radio_3" value=""><img src="helado3.png"/></label>
+                                  </div>
+                                  <center><strong>Chocolate</strong></center>
+                                  <div class="radio radio_3">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_3" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_3" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_3" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente4" id="radio_4" value=""><img src="ingrediente_1.png"/></label>
+                                  </div>
+                                  <div class="radio radio_4">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_4" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_4" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_4" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente5" id="radio_5" value=""><img src="ingrediente_1.png"/></label>
+                                  </div>
+                                  <div class="radio radio_5">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_5" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_5" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_5" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente6" id="radio_6" value=""><img src="ingrediente_1.png"/></label>
+                                  </div>
+                                  <div class="radio radio_6">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_6" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_6" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_6" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente7" id="radio_7" value=""><img src="ingrediente_1.png"/></label>
+                                  </div>
+                                  <div class="radio radio_7">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_7" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_7" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_7" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Toppings</div>
+                    <div class="panel-body">
+                      <div class="content">
+                        <form role="form">
+                          <div class="IngredientsList" id="scrollbar_style">
+                            <ul class="list-inline">
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente8" id="radio_8" value=""><img src="topping1.png"/></label>
+                                  </div>
+                                  <center><strong>Chispas</strong></center>
+                                  <div class="radio radio_8">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_8" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_8" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_8" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente9" id="radio_9" value=""><img src="ingrediente_1.png"/></label>
+                                  </div>
+                                  <div class="radio radio_9">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_9" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_9" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_9" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente10" id="radio_10" value=""><img src="ingrediente_1.png"/></label>
+                                  </div>
+                                  <div class="radio radio_10">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_10" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_10" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_10" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente11" id="radio_11" value=""><img src="ingrediente_1.png"/></label>
+                                  </div>
+                                  <div class="radio radio_11">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_11" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_11" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_11" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente12" id="radio_12" value=""><img src="ingrediente_1.png"/></label>
+                                  </div>
+                                  <div class="radio radio_12">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_12" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_12" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_12" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente13" id="radio_13" value=""><img src="ingrediente_1.png"/></label>
+                                  </div>
+                                  <div class="radio radio_13">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_13" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_13" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_13" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente14" id="radio_14" value=""><img src="ingrediente_1.png"/></label>
+                                  </div>
+                                  <div class="radio radio_14">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_14" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_14" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_14" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Adicionales</div>
+                    <div class="panel-body">
+                      <div class="content">
+                        <form role="form">
+                          <div class="IngredientsList" id="scrollbar_style">
+                            <ul class="list-inline">
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente15" id="radio_15" value=""><img src="adicional1.png"/></label>
+                                  </div>
+                                  <center><strong>Barquillo</strong></center>
+                                  <div class="radio radio_15">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_15" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_15" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_15" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente16" id="radio_16" value=""><img src="ingrediente_1.png"/></label>
+                                  </div>
+                                  <div class="radio radio_16">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_16" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_16" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_16" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente17" id="radio_17" value=""><img src="ingrediente_1.png"/></label>
+                                  </div>
+                                  <div class="radio radio_17">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_17" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_17" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_17" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente18" id="radio_18" value=""><img src="ingrediente_1.png"/></label>
+                                  </div>
+                                  <div class="radio radio_18">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_18" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_18" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_18" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente19" id="radio_19" value=""><img src="ingrediente_1.png"/></label>
+                                  </div>
+                                  <div class="radio radio_19">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_19" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_19" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_19" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente20" id="radio_20" value=""><img src="ingrediente_1.png"/></label>
+                                  </div>
+                                  <div class="radio radio_20">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_20" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_20" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_20" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="IngredientsItem">
+                                <div class="form-group">
+                                  <div class="checkbox">
+                                    <label><input type="checkbox" class="ingrediente21" id="radio_21" value=""><img src="ingrediente_1.png"/></label>
+                                  </div>
+                                  <div class="radio radio_21">
+                                    <label class="radio"><input class="calc" type="radio" name="radio_21" value="100" disabled>Poco - ₡100</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_21" value="300" disabled>Regular - ₡300</label>
+                                    <label class="radio"><input class="calc" type="radio" name="radio_21" value="800" disabled>Mucho - ₡800</label>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+                  <center>
+                    <p>Subtotal</p><p id="precio-subtotal">0</p>
+                    <button class="btn btn-default" type="submit">Enviar</button>
+                  </center>
+
+                </div>
+              <form/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="function.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.cookie.js"></script>
+
+  </body>
+</html>
