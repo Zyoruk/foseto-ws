@@ -537,13 +537,11 @@
             </div>
           </div>
           <div class="panel panel-default">
-            <form action="../webservices/orders.php?ci" method="post">
               <div class="panel-heading">
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Crear nueva orden</a>
                 </h4>
               </div>
-            </form>
             <div id="collapse3" class="panel-collapse collapse">
               <form form action="../webservices/order.php?co" method="post">
                 <div class="panel-body">
@@ -553,94 +551,8 @@
                       <div class="content">
                         <form role="form">
                           <div class="IngredientsList" id="scrollbar_style">
-                            <ul class="list-inline">
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente1" id="radio_1" value=""><img src="helado1.png"/></label>
-                                  </div>
-                                  <center><strong>Mora</strong></center>
-                                  <div class="radio radio_1">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_1" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_1" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_1" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente2" id="radio_2" value=""><img src="helado2.png"/></label>
-                                  </div>
-                                  <center><strong>Naranja</strong></center>
-                                  <div class="radio radio_2">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_2" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_2" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_2" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente3" id="radio_3" value=""><img src="helado3.png"/></label>
-                                  </div>
-                                  <center><strong>Chocolate</strong></center>
-                                  <div class="radio radio_3">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_3" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_3" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_3" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente4" id="radio_4" value=""><img src="ingrediente_1.png"/></label>
-                                  </div>
-                                  <div class="radio radio_4">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_4" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_4" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_4" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente5" id="radio_5" value=""><img src="ingrediente_1.png"/></label>
-                                  </div>
-                                  <div class="radio radio_5">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_5" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_5" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_5" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente6" id="radio_6" value=""><img src="ingrediente_1.png"/></label>
-                                  </div>
-                                  <div class="radio radio_6">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_6" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_6" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_6" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente7" id="radio_7" value=""><img src="ingrediente_1.png"/></label>
-                                  </div>
-                                  <div class="radio radio_7">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_7" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_7" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_7" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
+                            <ul class="list-inline" id="list_helados">
+
                             </ul>
                           </div>
                         </form>
@@ -653,92 +565,8 @@
                       <div class="content">
                         <form role="form">
                           <div class="IngredientsList" id="scrollbar_style">
-                            <ul class="list-inline">
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente8" id="radio_8" value=""><img src="topping1.png"/></label>
-                                  </div>
-                                  <center><strong>Chispas</strong></center>
-                                  <div class="radio radio_8">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_8" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_8" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_8" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente9" id="radio_9" value=""><img src="ingrediente_1.png"/></label>
-                                  </div>
-                                  <div class="radio radio_9">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_9" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_9" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_9" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente10" id="radio_10" value=""><img src="ingrediente_1.png"/></label>
-                                  </div>
-                                  <div class="radio radio_10">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_10" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_10" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_10" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente11" id="radio_11" value=""><img src="ingrediente_1.png"/></label>
-                                  </div>
-                                  <div class="radio radio_11">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_11" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_11" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_11" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente12" id="radio_12" value=""><img src="ingrediente_1.png"/></label>
-                                  </div>
-                                  <div class="radio radio_12">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_12" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_12" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_12" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente13" id="radio_13" value=""><img src="ingrediente_1.png"/></label>
-                                  </div>
-                                  <div class="radio radio_13">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_13" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_13" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_13" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente14" id="radio_14" value=""><img src="ingrediente_1.png"/></label>
-                                  </div>
-                                  <div class="radio radio_14">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_14" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_14" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_14" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
+                            <ul class="list-inline" id="list_topping">
+
                             </ul>
                           </div>
                         </form>
@@ -751,92 +579,8 @@
                       <div class="content">
                         <form role="form">
                           <div class="IngredientsList" id="scrollbar_style">
-                            <ul class="list-inline">
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente15" id="radio_15" value=""><img src="adicional1.png"/></label>
-                                  </div>
-                                  <center><strong>Barquillo</strong></center>
-                                  <div class="radio radio_15">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_15" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_15" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_15" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente16" id="radio_16" value=""><img src="ingrediente_1.png"/></label>
-                                  </div>
-                                  <div class="radio radio_16">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_16" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_16" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_16" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente17" id="radio_17" value=""><img src="ingrediente_1.png"/></label>
-                                  </div>
-                                  <div class="radio radio_17">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_17" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_17" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_17" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente18" id="radio_18" value=""><img src="ingrediente_1.png"/></label>
-                                  </div>
-                                  <div class="radio radio_18">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_18" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_18" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_18" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente19" id="radio_19" value=""><img src="ingrediente_1.png"/></label>
-                                  </div>
-                                  <div class="radio radio_19">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_19" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_19" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_19" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente20" id="radio_20" value=""><img src="ingrediente_1.png"/></label>
-                                  </div>
-                                  <div class="radio radio_20">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_20" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_20" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_20" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
-                              <li class="IngredientsItem">
-                                <div class="form-group">
-                                  <div class="checkbox">
-                                    <label><input type="checkbox" class="ingrediente21" id="radio_21" value=""><img src="ingrediente_1.png"/></label>
-                                  </div>
-                                  <div class="radio radio_21">
-                                    <label class="radio"><input class="calc" type="radio" name="radio_21" value="100" disabled>Poco - ₡100</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_21" value="300" disabled>Regular - ₡300</label>
-                                    <label class="radio"><input class="calc" type="radio" name="radio_21" value="800" disabled>Mucho - ₡800</label>
-                                  </div>
-                                </div>
-                              </li>
+                            <ul class="list-inline" id="list_adicional">
+
                             </ul>
                           </div>
                         </form>
@@ -862,5 +606,34 @@
     <script src="bootstrap.min.js"></script>
     <script src="jquery.cookie.js"></script>
 
+    <script>
+    $(document).ready(function () {
+			$.ajax({
+				type: "GET",
+				url: "../webservices/newOrder.php",
+        dataType: 'json',
+				success: function(data){
+				var obj = JSON.parse(data);
+        $.each(obj,function(index,element){
+          var ingredient_type = element.type;
+          var ul_name = "";
+          switch (ingredient_type) {
+            case '0':
+              ul_name = "#list_helados";
+              break;
+            case '1':
+              ul_name = "#list_topping";
+              break;
+            case '2':
+              ul_name = "#list_adicional";
+              break;
+
+          }
+          $(ul_name).append('<li class="IngredientsItem"><div class="form-group"><div class="checkbox"><label><input type="checkbox" class="'+element.name+'" id="'+element.name+'" value=""><img src="helado1.png"/></label></div><center><strong>'+element.name+'</strong></center><div class="radio '+element.name+'"><label class="radio"><input class="calc" type="radio" name="'+element.name+'" value="'+(parseInt(element.price,10))/2+'" disabled>Poco - ₡'+(parseInt(element.price,10))/2+'</label><label class="radio"><input class="calc" type="radio" name="'+element.name+'" value="'+element.price+'" disabled>Regular - ₡'+element.price+'</label><label class="radio"><input class="calc" type="radio" name="'+element.name+'" value="'+(parseInt(element.price,10))*2+'" disabled>Mucho - ₡'+(parseInt(element.price,10))*2+'</label></div></div></li>');
+        })
+				}
+			});
+    });
+    </script>
   </body>
 </html>
