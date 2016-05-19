@@ -102,6 +102,17 @@ input[type=checkbox] {
     display: none;
 }
 
+#ingredientes_menu{
+	min-width: 0px;
+	list-style-type: none;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
 #top-link-block.affix-top {
     position: absolute; /* allows it to "slide" up into view */
     bottom: -82px; /* negative of the offset - height of link element */
@@ -114,10 +125,54 @@ input[type=checkbox] {
 }
 
 #panel_price{
-	width:75px;
+	width:95px;
+	position: fixed;
+    top: 118px;
+    right: 0px;
+	border:2px solid #8A321F;
+}
+
+#panel_body{
+	padding-left:0px;
+	position: relative;
+	margin:auto;
+}
+
+#panel_body p{
+	width:95px;
+	text-align: center;
+	color: #FFE6C4;
+	background-color: #8A321F;
+}
+
+#menu_hidden_title{
+	text-align: center;
+	padding-left: 5px;
+	text-decoration: none;
+}
+
+#subtotal_price{
+	display:table;
+	margin:0 auto;
+	background-color: #8A321F;
+}
+
+#panel_body strong{
+	text-align: center;
+	color: #DE6F1F;
+}
+#trapezoid {
+	width: 15px;
+	height: 40px;
+	background: #8A321F;
 	position: fixed; /* keeps it on the bottom once in view */
-    top: 118px; /* height of link element */
-    right: 10px; /* padding from the left side of the window */
+    top: 170px; /* height of link element */
+    right: 95px; /* padding from the left side of the window */
+}
+
+#arrow_menu{
+	color: white;
+	top:10px;
 }
 
 .error_div h5{
@@ -162,6 +217,11 @@ input[type=checkbox] {
 	background: #8A321F;
 }
 
+.hidden_menu a{
+	display:block;
+	text-decoration: none;
+}
+
 .span_text{
 	display: block;
 	font-size: 15px;
@@ -173,9 +233,4 @@ input[type=checkbox] {
 	font-size: 45px;
 	padding-bottom: 10px;
 	padding-top: 10px;
-}
-
-.hidden_menu a{
-	display:block;
-	text-decoration: none;
 }

@@ -11,8 +11,6 @@
     <link href="bootstrap.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <link href="bootstrap-custom.css" rel="stylesheet">
-    <link href="ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <link href="navbar-fixed-top.css" rel="stylesheet">
 
     <title>Foseto</title>
   </head>
@@ -59,7 +57,7 @@
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Combos</a>
+                <a class="accordion_menu" data-toggle="collapse" data-parent="#accordion" href="#collapse1">Combos</a>
               </h4>
             </div>
             <div id="collapse1" class="panel-collapse collapse">
@@ -304,7 +302,7 @@
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Historial de Ordenes</a>
+                <a class="accordion_menu" data-toggle="collapse" data-parent="#accordion" href="#collapse2">Historial de Ordenes</a>
               </h4>
             </div>
             <div id="collapse2" class="panel-collapse collapse">
@@ -539,7 +537,7 @@
           <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Crear nueva orden</a>
+                  <a class="accordion_menu" data-toggle="collapse" data-parent="#accordion" href="#collapse3" id="new_order_link">Crear nueva orden</a>
                 </h4>
               </div>
             <div id="collapse3" class="panel-collapse collapse">
@@ -589,7 +587,7 @@
                   </div>
 
                   <center>
-                    <p>Subtotal</p><p id="precio-subtotal">0</p>
+                    <p>Subtotal</p><p class="text_precio" id="precio-subtotal">0</p>
                     <button class="btn btn-default" type="submit">Enviar</button>
                   </center>
 
@@ -600,40 +598,32 @@
         </div>
       </div>
     </div>
+
+    <span id="top-link-block">
+			<div id="trapezoid">
+				<a href="javascript:;" onclick="arrow_link()"><span class="glyphicon glyphicon-chevron-right" id="arrow_menu" aria-hidden="true"></span></a>
+			</div>
+			<div class="panel panel-default" id="panel_price">
+				<div class="panel-body" id="panel_body">
+					<p>Subtotal</p>
+					<span class="badge text_precio" id="subtotal_price">₡0</span>
+					<br>
+					<li class="dropdown" id="ingredientes_menu">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="menu_hidden_title">Ingredientes <span class="caret"></span></a>
+					  <ul class="dropdown-menu pull-right scrollable-menu scrollbar_style" id="ul_ingredients">
+					  </ul>
+					</li>
+
+				</div>
+			</div>
+		</span>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="function.js"></script>
+    <script src="neworders.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="bootstrap.min.js"></script>
     <script src="jquery.cookie.js"></script>
 
-    <script>
-    $(document).ready(function () {
-			$.ajax({
-				type: "GET",
-				url: "../webservices/newOrder.php",
-        dataType: 'json',
-				success: function(data){
-				var obj = JSON.parse(data);
-        $.each(obj,function(index,element){
-          var ingredient_type = element.type;
-          var ul_name = "";
-          switch (ingredient_type) {
-            case '0':
-              ul_name = "#list_helados";
-              break;
-            case '1':
-              ul_name = "#list_topping";
-              break;
-            case '2':
-              ul_name = "#list_adicional";
-              break;
-
-          }
-          $(ul_name).append('<li class="IngredientsItem"><div class="form-group"><div class="checkbox"><label><input type="checkbox" class="'+element.name+'" id="'+element.name+'" value=""><img src="helado1.png"/></label></div><center><strong>'+element.name+'</strong></center><div class="radio '+element.name+'"><label class="radio"><input class="calc" type="radio" name="'+element.name+'" value="'+(parseInt(element.price,10))/2+'" disabled>Poco - ₡'+(parseInt(element.price,10))/2+'</label><label class="radio"><input class="calc" type="radio" name="'+element.name+'" value="'+element.price+'" disabled>Regular - ₡'+element.price+'</label><label class="radio"><input class="calc" type="radio" name="'+element.name+'" value="'+(parseInt(element.price,10))*2+'" disabled>Mucho - ₡'+(parseInt(element.price,10))*2+'</label></div></div></li>');
-        })
-				}
-			});
-    });
-    </script>
   </body>
 </html>

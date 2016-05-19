@@ -1,17 +1,3 @@
-function calcscore(){
-  var score = 0;
-  $(".calc:checked").each(function(){
-    score+=parseInt($(this).val(),10);
-  });
-  $("#precio-subtotal").text(score)
-}
-
-function restscore(value_before){
-  var score = parseInt($("#precio-subtotal").text(),10);
-  //alert("score " + score + " valor " + value_before);
-  $("#precio-subtotal").text(score - value_before);
-}
-
 function logOut(){
   $.removeCookie('userInfo', { path: '/' });
   location.href='index.html';
@@ -41,41 +27,6 @@ $(document).ready(function () {
       }
     });
   }
-
-  var $class_name, $class_id;
-  $("#precio-radio_1").hide();
-  $("#precio-radio_2").hide();
-  $("#precio-radio_3").hide();
-
-  $("input:checkbox").change(function(event) {
-    /*alert(event.target.id+" and "+$(event.target).attr('class'));*/
-    $class_name = $(event.target).attr('class');
-    $class_id = event.target.id;
-
-    if($("."+ $class_name).is(":checked")){
-      $("." + $class_id).find('input').removeAttr("disabled");
-      /*$("#precio-"+$class_id).show();*/
-    }else{
-      $("." + $class_id).find('input').attr('disabled','disabled');
-      $("." + $class_id).find('input').attr('checked',false);
-      /*var value_before = parseInt($("#precio-"+$class_id).text(),10);
-				restscore(value_before);
-				$("#precio-"+$class_id).text('0');
-				$("#precio-"+$class_id).hide();*/
-    }
-  });
-
-  $('input:radio').on('change', function(event){
-    /* alert(event.target.name + " and " + event.target.value); */
-    var $precio_name = event.target.name;
-    var $precio_value = event.target.value;
-    $("#precio-" + $precio_name).text($precio_value);
-    $("#precio-" + $precio_name).show();
-  });
-
-  $(".calc").change(function(){
-    calcscore()
-  });
 
   $('[data-toggle="popover"]').click(function(e) {
     e.preventDefault();
