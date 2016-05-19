@@ -6,6 +6,10 @@ function logOut(){
 $(document).ready(function () {
 
   if($.cookie("userInfo") == null){
+    var currentLocation = window.location.pathname;
+    if(currentLocation != "/Foseto/project/index.html" && currentLocation != "/Foseto/project/comentarios.html"){
+      location.href='index.html';
+    }
     $("#hidden_menu").hide();
     $("#link_Orders").hide();
     $("#link_myOrders").hide();
