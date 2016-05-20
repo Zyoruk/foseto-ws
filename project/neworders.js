@@ -5,7 +5,7 @@ var ingredientsarray = [];
 //Es para el precio final
 function calcPrecioTotal(){
   precioTotal = 0;
-  
+
   $(".calc:checked").each(function(){
     precioTotal += parseInt($(this).val(),10);
   });
@@ -126,6 +126,24 @@ function arrow_link(){
 
 }
 
+function sendOrder(){
+  var ingredientsSO=[];
+  $(".calc:checked").each(function(){
+    var text = $(this).attr('text');
+    var name = $(this).attr('name');
+    ingredientsSO.push(name+","+text);
+  });
+  alert(ingredientsSO);
+  $.ajax({
+      type: "POST",
+      url: "../webservices/order.php",
+      data: {co:'co',cid:$.cookie("userInfo"),ing:ingredientsSO,total:precioTotal},
+      success:function(data){
+        alert(data);
+      }
+    });
+}
+
 
 $(document).ready(function () {
 
@@ -168,7 +186,7 @@ $(document).ready(function () {
               break;
           }
 
-          $(ul_name).append('<li class="IngredientsItem"><div class="form-group"><div class="checkbox"><label><input type="checkbox" id="'+element.name+ingredient_type+'"><img src="helado1.png"/></label></div><center><strong>'+element.name+'</strong></center><div class="radio '+element.name+ingredient_type+'"><label class="radio"><input class="calc" type="radio" name="'+element.name+ingredient_type+'" value="'+(parseInt(element.price,10))/2+'" disabled>Poco - ₡'+(parseInt(element.price,10))/2+'</label><label class="radio"><input class="calc" type="radio" name="'+element.name+ingredient_type+'" value="'+element.price+'" disabled>Regular - ₡'+element.price+'</label><label class="radio"><input class="calc" type="radio" name="'+element.name+ingredient_type+'" value="'+(parseInt(element.price,10))*2+'" disabled>Mucho - ₡'+(parseInt(element.price,10))*2+'</label></div></div></li>');
+          $(ul_name).append('<li class="IngredientsItem"><div class="form-group"><div class="checkbox"><label><input type="checkbox" id="'+element.name+ingredient_type+'"><img class="ingredient_image" src="'+element.image+'"/></label></div><center><strong>'+element.name+'</strong></center><div class="radio '+element.name+ingredient_type+'"><label class="radio"><input class="calc" type="radio" name="'+element.name+ingredient_type+'" text="Poco" value="'+(parseInt(element.price,10))/2+'" disabled>Poco - ₡'+(parseInt(element.price,10))/2+'</label><label class="radio"><input class="calc" type="radio" name="'+element.name+ingredient_type+'" text="Regular" value="'+element.price+'" disabled>Regular - ₡'+element.price+'</label><label class="radio"><input class="calc" type="radio" name="'+element.name+ingredient_type+'" text="Mucho" value="'+(parseInt(element.price,10))*2+'" disabled>Mucho - ₡'+(parseInt(element.price,10))*2+'</label></div></div></li>');
 
         });
       }
