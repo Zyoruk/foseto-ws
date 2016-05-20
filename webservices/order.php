@@ -49,7 +49,7 @@ class Order {
 		}
 
 		//Insert the new order with the client name
-		$query = "INSERT INTO orders (clientId) VALUES (".$clientId.")";
+		$query = "INSERT INTO orders (clientId,total) VALUES (".$clientId.",$totalPrice)";
 
 		if (! mysql_query ( $query, $conn )) {
 			die ( "{'error':'Error description1: ".mysql_error($conn)."'}" );
