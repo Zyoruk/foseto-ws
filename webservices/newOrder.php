@@ -28,6 +28,6 @@ $final = substr($final,0,-1);
 $final = $final."]";
 $final = json_encode($final);
 echo($final);
-file_put_contents('php://stderr',print_r(" final: ".$final."\n\n\n\n\n\n" ,TRUE));
+//file_put_contents('php://stderr',print_r(" final: ".$final."\n\n\n\n\n\n" ,TRUE));
 
 ?>
