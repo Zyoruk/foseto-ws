@@ -541,16 +541,14 @@
                 </h4>
               </div>
             <div id="collapse3" class="panel-collapse collapse">
-              <form form action="../webservices/order.php?co" method="post">
-                <div class="panel-body">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">Helados</div>
-                    <div class="panel-body">
-                      <div class="content">
-                        <form role="form">
-                          <div class="IngredientsList" id="scrollbar_style">
-                            <ul class="list-inline" id="list_helados">
-
+              <div class="panel-body">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Helados</div>
+                  <div class="panel-body">
+                    <div class="content">
+                      <form role="form">
+                        <div class="IngredientsList" id="scrollbar_style">
+                          <ul class="list-inline" id="list_helados">
                             </ul>
                           </div>
                         </form>
@@ -588,11 +586,11 @@
 
                   <center>
                     <p>Subtotal</p><p class="text_precio" id="precio-subtotal">0</p>
-                    <button class="btn btn-default" type="submit">Enviar</button>
+                    <button class="btn btn-default" type="submit" onclick="sendOrder()">Enviar</button>
                   </center>
 
                 </div>
-              <form/>
+
             </div>
           </div>
         </div>
