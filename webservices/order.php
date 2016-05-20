@@ -19,14 +19,14 @@
 class Order {
 	function CreateOrder($cid , $ingarray, $price){
 
-		$arrayIngredients=[];
+		$arrayIngredients=array();
 		for ($i=0; $i < count($ingarray); $i++) {
 			$tmp=explode(',',$ingarray[$i]);
 			$quantity=$tmp[1];
 			$name=substr($tmp[0],0,-1);
 			$type=substr($tmp[0],-1);
 			$arrayTmp=array($name,$type,$quantity);
-			$arrayIngredients[$i]=$arrayTmp;
+			$arrayIngredients[]=$arrayTmp;
 		}
 		//file_put_contents('php://stderr',print_r(" ArrayIterator: ".$arrayIngredients[0][0]."\n\n\n\n\n\n" ,TRUE));
 
@@ -36,7 +36,7 @@ class Order {
 
 		$servername = "localhost";
 		$username = "root"; // add your mysql username
-		$password = "erick"; // add your password
+		$password = "1807"; // add your password
 		$dbname = 'foseto';
 
 		// Create connection
@@ -65,21 +65,22 @@ class Order {
 		$result = mysql_fetch_assoc($result);
 		$id = $result['ID'];
 
+		file_put_contents('php://stderr',print_r(" ID: ".$id."\n\n\n\n\n\n" ,TRUE));
 		//Insert ingredients into order - ingredients relation table
 		//This will prompt the trigger that calculates the total to be paid
 
-		for ($j = 0 ; $j <= count($arrayIngredients); $j++){
+		for ($j = 0 ; $j < count($arrayIngredients); $j++){
 
-			$querIngredient = "SELECT ID FROM ingredients WHERE type='".$arrayIngredients[$j][1]."' AND name='".$arrayIngredients[$j][0]."';";
-			file_put_contents('php://stderr',print_r(" sadfasfds: ".$querIngredient."\n\n\n\n\n\n" ,TRUE));
-			$resultIngredient = mysql_query ( $querIngredient, $conn );
-			$resultIngredient = mysql_fetch_assoc($resultIngredient);
-			$idIngredient = $resultIngredient['ID'];
+			$query = "SELECT ID FROM ingredients WHERE type='".$arrayIngredients[$j][1]."' AND name='".$arrayIngredients[$j][0]."';";
+			//file_put_contents('php://stderr',print_r(" sadfasfds: ".$query."\n\n\n\n\n\n" ,TRUE));
+			$result = mysql_query ( $query, $conn );
+			$result = mysql_fetch_assoc($result);
+			$idIngredient = $result['ID'];
 
-			$query = "INSERT INTO order_ingredient (order_id, ingredient_id) VALUES ('".$id."',".$idIngredient.");";
+			$query = "INSERT INTO order_ingredient (order_id, ingredient_id, quantity) VALUES ('".$id."','".$idIngredient."','".$arrayIngredients[$j][2][0]."');";
 
 
-file_put_contents('php://stderr',print_r(" ArrayIterator: ".$query."\n\n\n\n\n\n" ,TRUE));
+			//file_put_contents('php://stderr',print_r(" ArrayIterator: ".$query."\n\n\n\n\n\n" ,TRUE));
 			if (! mysql_query ( $query, $conn )) {
 				die ( "{'error':'Error description3: ".mysql_error($conn)."'}" );
 			}
