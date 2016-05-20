@@ -17,7 +17,7 @@ $num = $num["COUNT(id)"];
 $num =(int)$num;
 
 $final='[' ;
-for ($i=1; $i < $num; $i++) {
+for ($i=1; $i <= $num; $i++) {
   $query = "SELECT * FROM ingredients WHERE available = '1'  AND id ='".$i."';";
   $result = mysql_query ( $query );
   $result = mysql_fetch_assoc($result);
