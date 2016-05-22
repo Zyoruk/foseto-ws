@@ -1,14 +1,6 @@
 <?php
+include_once 'connect_sql.php';
 
-$servername = "localhost";
-$username = "root"; // add your mysql username
-$password = "erick"; // add your password
-$dbname = 'foseto';
-
-
-// Create connection
-$conn = mysql_connect ( $servername, $username, $password, TRUE );
-mysql_select_db ($dbname, $conn );
 
 $cont = "SELECT COUNT(id) FROM ingredients;";
 $num = mysql_query( $cont );

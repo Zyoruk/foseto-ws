@@ -1,18 +1,11 @@
 <?php
-//include 'connect_sql.php';
+include "connect_sql.php";
+
 class User{
 	function login($email, $pass){
-		//No deberia estar aqui
-		$servername = "localhost";
-		$username = "root"; // add your mysql username
-		$password = "1807"; // add your password
-		$dbname = 'foseto';
-		// Create connection
-		$conn = mysql_connect ( $servername, $username, $password, TRUE );
-		mysql_select_db ($dbname, $conn );
-		//Hasta aqui
+
 		$query = "SELECT id FROM user WHERE email ='".$email."' AND  pass = '".$pass."' ;";
-		$result = mysql_query($query,$conn);
+		$result = mysql_query($query);
 		$cookieError="error";
 		if (!$result){
 			die ( "{'error' : 'Error description:" . mysql_error ( $conn ) . " '}" );
@@ -34,15 +27,7 @@ class User{
 		header('location:../project/index.html');
 	}
 	function register($name, $nick, $email, $pass){
-		//No deberia estar aqui
-		$servername = "localhost";
-		$username = "root"; // add your mysql username
-		$password = "1807"; // add your password
-		$dbname = 'foseto';
-		// Create connection
-		$conn = mysql_connect ( $servername, $username, $password, TRUE );
-		mysql_select_db ($dbname, $conn );
-		//Hasta aqui
+
 		$cookieError="error_reg";
 		$query = "SELECT 1 FROM user WHERE email = '".$email."';";
 		$result = mysql_query($query);
@@ -136,16 +121,7 @@ class User{
 		return $result;
 	}
 	function modifyNick($nick){
-		//No deberia estar aqui
-		$servername = "localhost";
-		$username = "root"; // add your mysql username
-		$password = "1807"; // add your password
-		$dbname = 'foseto';
 		$cookieName = "userInfo";
-		// Create connection
-		$conn = mysql_connect ( $servername, $username, $password, TRUE );
-		mysql_select_db ($dbname, $conn );
-		//Hasta aqui
 		$query = "UPDATE user SET nick = '".$nick."' WHERE id =" .$_COOKIE[$cookieName].";";
 		if (! mysql_query ( $query )) {
 			die ( "{'error' : 'Error description:" . mysql_error ( $conn ) . " '}" );
@@ -156,16 +132,7 @@ class User{
 		header('location:../project/perfil.html');
 	}
 	function modifyName($name){
-		//No deberia estar aqui
-		$servername = "localhost";
-		$username = "root"; // add your mysql username
-		$password = "1807"; // add your password
-		$dbname = 'foseto';
 		$cookieName = "userInfo";
-		// Create connection
-		$conn = mysql_connect ( $servername, $username, $password, TRUE );
-		mysql_select_db ($dbname, $conn );
-		//Hasta aqui
 		$query = "UPDATE user SET name = '".$name."' WHERE id =" .$_COOKIE[$cookieName].";";
 		if (! mysql_query ( $query )) {
 			die ( "{'error' : 'Error description:" . mysql_error ( $conn ) . " '}" );
@@ -177,16 +144,7 @@ class User{
 		header('location:../project/perfil.html');
 	}
 	function modifyPass($pass){
-		//No deberia estar aqui
-		$servername = "localhost";
-		$username = "root"; // add your mysql username
-		$password = "1807"; // add your password
-		$dbname = 'foseto';
 		$cookieName = "userInfo";
-		// Create connection
-		$conn = mysql_connect ( $servername, $username, $password, TRUE );
-		mysql_select_db ($dbname, $conn );
-		//Hasta aqui
 		$query = "UPDATE user SET pass = '".$pass."' WHERE id =" .$_COOKIE[$cookieName].";";
 		if (! mysql_query ( $query )) {
 			die ( "{'error' : 'Error description:" . mysql_error ( $conn ) . " '}" );

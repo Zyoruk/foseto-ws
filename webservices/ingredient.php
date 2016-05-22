@@ -1,4 +1,5 @@
 <?php
+include_once "connect_sql.php";
 
 class Ingredient {
 	function checkType($type) {

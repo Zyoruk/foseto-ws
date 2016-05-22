@@ -1,4 +1,5 @@
 <?php
+include_once "connect_sql.php";
 	/**
 	 * Implements basic methods
 	 * CREATE ORDER
@@ -34,31 +35,17 @@ class Order {
 		$ingredients = $ingarray;
 		$totalPrice = $price;
 
-		$servername = "localhost";
-		$username = "root"; // add your mysql username
-		$password = "1807"; // add your password
-		$dbname = 'foseto';
-
-		// Create connection
-		$conn = mysql_connect ( $servername, $username, $password, TRUE );
-		mysql_select_db ($dbname, $conn );
-
-		// Check connection
-		if (! $conn) {
-			die ( "{error:'Connection failed:" . mysql_connect_error ())."'}";
-		}
-
 		//Insert the new order with the client name
 		$query = "INSERT INTO orders (clientId,total) VALUES (".$clientId.",$totalPrice)";
 
-		if (! mysql_query ( $query, $conn )) {
+		if (! mysql_query ( $query)) {
 			die ( "{'error':'Error description1: ".mysql_error($conn)."'}" );
 		}
 
 		//Get the ID.
 
 		$query = "SELECT ID FROM orders WHERE clientId ='".$clientId."'ORDER BY id DESC";
-		$result = mysql_query ( $query, $conn );
+		$result = mysql_query ( $query);
 		if (! $result) {
 			die ( "{'error':'Error description2: '".mysql_error($conn)."''}" );
 		}
@@ -73,7 +60,7 @@ class Order {
 
 			$query = "SELECT ID FROM ingredients WHERE type='".$arrayIngredients[$j][1]."' AND name='".$arrayIngredients[$j][0]."';";
 			//file_put_contents('php://stderr',print_r(" sadfasfds: ".$query."\n\n\n\n\n\n" ,TRUE));
-			$result = mysql_query ( $query, $conn );
+			$result = mysql_query ( $query);
 			$result = mysql_fetch_assoc($result);
 			$idIngredient = $result['ID'];
 
@@ -81,7 +68,7 @@ class Order {
 
 
 			//file_put_contents('php://stderr',print_r(" ArrayIterator: ".$query."\n\n\n\n\n\n" ,TRUE));
-			if (! mysql_query ( $query, $conn )) {
+			if (! mysql_query ( $query)) {
 				die ( "{'error':'Error description3: ".mysql_error($conn)."'}" );
 			}
 		}
@@ -89,7 +76,7 @@ class Order {
 		//Get  ID from the order
 
 		$query = "SELECT ID FROM orders WHERE ID = ".$id."";
-		$result = mysql_query ( $query, $conn );
+		$result = mysql_query ( $query );
 
 		if (! $result) {
 			die ( "{'error':'Error description4: ".mysql_error($conn)."'}" );
@@ -110,7 +97,7 @@ class Order {
 		//Get all the data from the order
 
 		$query = "SELECT * FROM orders WHERE ID = ".$id."";
-		$result = mysql_query ( $query, $conn );
+		$result = mysql_query ( $query);
 
 		if (! $result) {
 			die ( "{'error':'Error description: ".mysql_error($conn)."'}" );

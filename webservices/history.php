@@ -1,17 +1,10 @@
 <?php
 
-$servername = "localhost";
-$username = "root"; // add your mysql username
-$password = "erick"; // add your password
-$dbname = 'foseto';
+include_once 'connect_sql.php';
 
 if (isset ($_REQUEST['cid'])){
 	$cid = $_REQUEST['cid'];
 }
-
-// Create connection
-$conn = mysql_connect ( $servername, $username, $password, TRUE );
-mysql_select_db ($dbname, $conn );
 
 $cont = "SELECT COUNT(id) FROM orders WHERE clientId='".$cid."';";
 $num = mysql_query( $cont );
