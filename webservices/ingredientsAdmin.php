@@ -1,14 +1,5 @@
 <?php
-
-$servername = "localhost";
-$username = "root"; // add your mysql username
-$password = "1807"; // add your password
-$dbname = 'foseto';
-
-
-// Create connection
-$conn = mysql_connect ( $servername, $username, $password, TRUE );
-mysql_select_db ($dbname, $conn );
+include_once 'connect_sql.php';
 
 $cont = "SELECT COUNT(id) FROM ingredients;";
 $num = mysql_query( $cont );
@@ -30,11 +21,8 @@ for ($i=1; $j <= $num; $i++) {
   }
 
 }
-file_put_contents('php://stderr',print_r(" EEE: ".$final."\n\n\n\n\n\n" ,TRUE));
 $final = substr($final,0,-1);
 $final = $final."]";
 $final = json_encode($final);
 echo($final);
-
-
 ?>
