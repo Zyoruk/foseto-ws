@@ -12,6 +12,8 @@
 		<link href="bootstrap-custom.css" rel="stylesheet">
 		<link href="ie10-viewport-bug-workaround.css" rel="stylesheet">
 		<link href="navbar-fixed-top.css" rel="stylesheet">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="star-rating.css" media="all" type="text/css"/>
 
 		<title>Foseto</title>
 	</head>
@@ -32,19 +34,12 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li><a href="index.html">Inicio</a></li>
-						<li id="link_myOrders"><a href="misordenes.html">Mis Órdenes</a></li>
-						<li id="link_Orders"><a href="ordenes.html">Crear Orden</a></li>
+						<li><a href="misordenes.html">Mis Órdenes</a></li>
+						<li><a href="ordenes.html">Crear Orden</a></li>
 						<li class="active"><a href="comentarios.html">Comentarios</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown active" id="link_person">
-							<a href="#" id="link_person_a" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
-							<ul class="dropdown-menu">
-								<li><a href="perfil.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Mi perfil</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="#" onclick="logOut()"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Cerrar Sesión</a></li>
-							</ul>
-						</li>
+						<li class="active"><a href="perfil.html">Mi Perfil<span class="sr-only"></span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -58,6 +53,11 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<blockquote>
+							<div class="container">
+								<form>
+									<input type="text" class="rating-read rating-loading" data-size="" value="2" title="">
+								</form>
+							</div>
 							<p>Comentario comentario comentario.</p>
 							<footer>Nombre Persona</footer>
 						</blockquote>
@@ -66,6 +66,11 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<blockquote>
+							<div class="container">
+								<form>
+									<input type="text" class="rating-read rating-loading" data-size="" value="5" title="">
+								</form>
+							</div>
 							<p>Comentario comentario comentario.</p>
 							<footer>Nombre Persona</footer>
 						</blockquote>
@@ -74,17 +79,30 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<blockquote>
+							<div class="container">
+								<form>
+									<input type="text" class="rating-read rating-loading" data-size="" value="1" title="">
+								</form>
+							</div>
 							<p>Comentario comentario comentario.</p>
 							<footer>Nombre Persona</footer>
 						</blockquote>
 					</div>
 				</div>
 				<div class="content">
-					<h4>Agregar Comentario</h4>
+					<h4><strong>Agregar Comentario</strong></h4>
+
+					<div class="container">
+						<form>
+							<input type="number" id="write-comment" class="rating-comentario rating-loading" value="0" data-size="sm" title="" step="1">
+							<br>
+						</form>
+					</div>
+
 					<textarea class="form-control" rows="3"></textarea>
 					<br>
 					<p>
-					  <button type="button" class="btn btn-primary" style="float: right; ">Enviar</button>
+					  <button type="button" class="btn btn-primary" style="float: right; " onclick="prueba()">Enviar</button>
 					</p>
 				</div>
 			</div>
@@ -92,8 +110,25 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 		<script src="bootstrap.min.js"></script>
-		<script src="function.js"></script>
-		<script src="jquery.cookie.js"></script>
+		<script src="star-rating.js" type="text/javascript"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="ie10-viewport-bug-workaround.js"></script>
+		<script>
+		function prueba(){
+				var x = $("#write-comment").val();
+				alert(x);
+			}
+		$(document).on('ready', function () {
+			$('.rating-comentario').rating({
+				showCaption: false
+			});
 
+			$('.rating-read').rating({
+				showCaption: false,
+				displayOnly: true
+
+			});
+		});
+	</script>
 	</body>
 </html>

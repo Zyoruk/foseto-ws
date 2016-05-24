@@ -1,5 +1,4 @@
 
-
 .table-fixed thead {
   width: 97%;
 }
@@ -238,4 +237,32 @@ input[type=checkbox] {
 .ingredient_image{
   width: 80px;
   height: 80px;
+}
+
+.newIngredient li{
+  float:left;
+	border:1px solid black;
+	border-radius: 25px;
+	vertical-align: top;
+	display: block;
+	margin-left: 20px;
+  width: 120px;
+	border-color: #8A321F;
+	text-align: center;
+  height: 200px;
+}
+
+.newIngredient span{
+  margin-top: 20px;
+}
+.newIngredient li:hover{
+	background: #8A321F;
+}
+
+.newIngredient a{
+	display:block;
+	text-decoration: none;
+}
+
+.ingredient_list {
 }

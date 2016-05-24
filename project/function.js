@@ -11,15 +11,25 @@ $(document).ready(function () {
       location.href='index.html';
     }
     $("#hidden_menu").hide();
+    $("#hidden_menu_admin").hide();
     $("#link_Orders").hide();
     $("#link_myOrders").hide();
     $("#link_person").hide();
   }else if($.cookie("userInfo") != null){
+    var userid = $.cookie("userInfo");
     $("#tabs_login_register").hide();
-    $("#hidden_menu").show();
-    $("#link_Orders").show();
-    $("#link_myOrders").show();
     $("#link_person").show();
+    if(userid == '0'){
+      $("#hidden_menu").hide();
+      $("#hidden_menu_admin").show();
+      $("#link_Orders").hide();
+      $("#link_myOrders").hide();
+    }else{
+      $("#hidden_menu_admin").hide();
+      $("#hidden_menu").show();
+      $("#link_Orders").show();
+      $("#link_myOrders").show();
+    }
 
     $.ajax({
       type: "GET",

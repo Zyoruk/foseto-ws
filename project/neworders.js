@@ -144,6 +144,15 @@ function sendOrder(){
     });
 }
 
+function edit_button(elem){
+  alert("El ingrediente " + elem.getAttribute("name") + " el tipo " + elem.getAttribute("value"));
+}
+
+function chageimg(ele, val){
+  $("#" + ele).attr("src",val);
+  //document.getElementById("#" + ele).src=val;
+}
+
 
 $(document).ready(function () {
 
@@ -192,34 +201,43 @@ $(document).ready(function () {
       }
     });
 
-  //Get de las ordenes
-  $.ajax({
-      type: "GET",
-      url: "../webservices/history.php",
-      data:  {cid:$.cookie("userInfo")},
-      dataType: 'json',
-      success: function(data){
-        var obj = JSON.parse(data);
-        $.each(obj,function(index,element){
-          var ingredient_type = element.type;
-          var ul_name = "";
-          switch (ingredient_type) {
-            case '0':
-              ul_name = "#list_helados";
-              break;
-            case '1':
-              ul_name = "#list_topping";
-              break;
-            case '2':
-              ul_name = "#list_adicional";
-              break;
-          }
+    //GET de los ingredientes admin
+    $.ajax({
+        type: "GET",
+        url: "../webservices/ingredientsAdmin.php",
+        dataType: 'json',
+        success: function(data){
+          var obj = JSON.parse(data);
+          $.each(obj,function(index,element){
+            var ingredient_type = element.type;
+            var ul_name_new = "";
+            switch (ingredient_type) {
+              case '0':
+                ul_name_new = "#list_helados_new";
+                break;
+              case '1':
+                ul_name_new = "#list_topping_new";
+                break;
+              case '2':
+                ul_name_new = "#list_adicional_new";
+                break;
+            }
+            var ava = element.available;
+            var disp ="";
+            switch (ava) {
+              case '0':
+                disp = "No disponible";
+                break;
+              case '1':
+                disp = "Disponible";
 
-          $(ul_name).append('<li class="IngredientsItem"><div class="form-group"><div class="checkbox"><label><input type="checkbox" id="'+element.name+ingredient_type+'"><img class="ingredient_image" src="'+element.image+'"/></label></div><center><strong>'+element.name+'</strong></center><div class="radio '+element.name+ingredient_type+'"><label class="radio"><input class="calc" type="radio" name="'+element.name+ingredient_type+'" text="Poco" value="'+(parseInt(element.price,10))/2+'" disabled>Poco - ₡'+(parseInt(element.price,10))/2+'</label><label class="radio"><input class="calc" type="radio" name="'+element.name+ingredient_type+'" text="Regular" value="'+element.price+'" disabled>Regular - ₡'+element.price+'</label><label class="radio"><input class="calc" type="radio" name="'+element.name+ingredient_type+'" text="Mucho" value="'+(parseInt(element.price,10))*2+'" disabled>Mucho - ₡'+(parseInt(element.price,10))*2+'</label></div></div></li>');
+            }
 
-        });
-      }
-    });
+            $(ul_name_new).append('<li class="IngredientsItem"><center><div class="form-group"><div class="checkbox"><img class="ingredient_image" src="'+element.image+'"/></center></div><center><strong>'+element.name+'</strong><br><strong>Precio: </strong>'+element.price+'<br>'+disp+'<p><button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modal_editIngredient" data-ingredient-id="'+element.id+'" data-ingredient-type="'+element.name+'" data-ingredient-img="'+element.image+'" data-ingredient-available="'+element.available+'" data-ingredient-price="'+element.price+'">Editar</button>&nbsp;<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modal_delIngredient" data-ingredient-id="'+element.id+'" data-ingredient-type="'+element.name+'">Eliminar</button></p></div></center></li>');
+
+          });
+        }
+      });
 
   });
 
@@ -247,4 +265,38 @@ $(document).on('click', 'input:radio', function(event) {
 
   calcPrecioTotal();
   calcArrayTotal();
+});
+
+$('#modal_newIngredient').on('show.bs.modal', function(e) {
+    var ingredientName = $(e.relatedTarget).data('ingredient-type');
+    var ingredientType = $(e.relatedTarget).data('ingredient-number');
+    $("#myModalLabel").text("Agregar " + ingredientName);
+    $("#type").val(ingredientType);
+});
+
+$('#modal_editIngredient').on('show.bs.modal', function(e) {
+    var ingredientName = $(e.relatedTarget).data('ingredient-type');
+    var ingredientId = $(e.relatedTarget).data('ingredient-id');
+    var ingredientImg = $(e.relatedTarget).data('ingredient-img');
+    var ingredientavailable = $(e.relatedTarget).data('ingredient-available');
+    var ingredientprice = $(e.relatedTarget).data('ingredient-price');
+
+    $("#myModalLabelEdit").text("Editar " + ingredientName);
+    $("#ingid").val(ingredientId);
+    $("#name_ingredient").val(ingredientName);
+    $("#image_ingredient_up").attr("src",ingredientImg);
+    $("#link_ingredient").val(ingredientImg);
+    $("#price_ingredient").val(ingredientprice);
+    if(ingredientavailable == '0'){
+      $("#available_no_ingredient").prop('checked',true);
+    }else if(ingredientavailable == '1'){
+      $("#available_yes_ingredient").prop('checked',true);
+    }
+});
+
+$('#modal_delIngredient').on('show.bs.modal', function(e) {
+    var ingredientName = $(e.relatedTarget).data('ingredient-type');
+    var ingredientId = $(e.relatedTarget).data('ingredient-id');
+    $("#ingid1").val(ingredientId);
+    $("#p_error").text("¿Seguro que desea borrar " + ingredientName + "?");
 });
