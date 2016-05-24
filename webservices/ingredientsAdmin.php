@@ -19,19 +19,22 @@ $num =(int)$num;
 $j = 1;
 $final='[' ;
 for ($i=1; $j <= $num; $i++) {
-  $query = "SELECT * FROM ingredients WHERE available = '1'  AND id ='".$i."';";
+  $query = "SELECT * FROM ingredients WHERE id ='".$i."';";
   $result = mysql_query ( $query );
   $result = mysql_fetch_assoc($result);
   $result = json_encode($result);
+
   if($result != 'false'){
     $j++;
     $final = $final.$result.",";
   }
+
 }
+file_put_contents('php://stderr',print_r(" EEE: ".$final."\n\n\n\n\n\n" ,TRUE));
 $final = substr($final,0,-1);
 $final = $final."]";
 $final = json_encode($final);
 echo($final);
-//file_put_contents('php://stderr',print_r(" final: ".$final."\n\n\n\n\n\n" ,TRUE));
+
 
 ?>
