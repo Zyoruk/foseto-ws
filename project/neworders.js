@@ -133,13 +133,12 @@ function sendOrder(){
     var name = $(this).attr('name');
     ingredientsSO.push(name+","+text);
   });
-  alert(ingredientsSO);
   $.ajax({
       type: "POST",
       url: "../webservices/order.php",
       data: {co:'co',cid:$.cookie("userInfo"),ing:ingredientsSO,total:precioTotal},
       success:function(data){
-        alert(data);
+        location.reload();
       }
     });
 }
@@ -152,7 +151,6 @@ function chageimg(ele, val){
   $("#" + ele).attr("src",val);
   //document.getElementById("#" + ele).src=val;
 }
-
 
 $(document).ready(function () {
 
@@ -194,7 +192,6 @@ $(document).ready(function () {
               ul_name = "#list_adicional";
               break;
           }
-
           $(ul_name).append('<li class="IngredientsItem"><div class="form-group"><div class="checkbox"><label><input type="checkbox" id="'+element.name+ingredient_type+'"><img class="ingredient_image" src="'+element.image+'"/></label></div><center><strong>'+element.name+'</strong></center><div class="radio '+element.name+ingredient_type+'"><label class="radio"><input class="calc" type="radio" name="'+element.name+ingredient_type+'" text="Poco" value="'+(parseInt(element.price,10))/2+'" disabled>Poco - ₡'+(parseInt(element.price,10))/2+'</label><label class="radio"><input class="calc" type="radio" name="'+element.name+ingredient_type+'" text="Regular" value="'+element.price+'" disabled>Regular - ₡'+element.price+'</label><label class="radio"><input class="calc" type="radio" name="'+element.name+ingredient_type+'" text="Mucho" value="'+(parseInt(element.price,10))*2+'" disabled>Mucho - ₡'+(parseInt(element.price,10))*2+'</label></div></div></li>');
 
         });
@@ -239,6 +236,119 @@ $(document).ready(function () {
         }
       });
 
+
+//Get de las ordenes
+  $.ajax({
+      type: "GET",
+      url: "../webservices/history.php",
+      data:  {cid:$.cookie("userInfo")},
+      dataType: 'json',
+      success: function(data){
+        var obj = JSON.parse(data);
+        var orders = [];
+        for(var i = 0; i < obj.length; i++){
+          var number = obj[i].order_id;
+          var flag = false;
+          for(var j = 0; j < orders.length; j++){
+            if(number == orders[j]){
+              flag = true;
+              break;
+            }
+          }
+          if(!flag){
+            orders.push(number);
+          }
+        }
+
+        $.each(orders,function(index,element){
+
+          var order_info = "";
+          for(var i = 0; i < obj.length; i++){
+            if(element == obj[i].order_id){
+              order_info = obj[i];
+              break;
+            }
+          }
+
+          var li = '<li class="OrdersItem"><div id="container">';
+          li = li + '<center><h3><strong>'+order_info.order_id+'</strong></h3></center><center><h5><strong>'+order_info.created+'</strong></h5></center><center><h4>₡'+order_info.total+'</h4></center>';
+          li = li + '<div class="panel-group">';
+          for(var i = 0; i < 3; i++){
+             var title = "";
+            switch (i) {
+              case 0:
+                title = "Helados";
+                break;
+              case 1:
+                title = "Toppings";
+                break;
+              case 2:
+                title = "Adicionales";
+                break;
+            }
+
+            var order_ingredients = [];
+            for(var k = 0; k < obj.length;k++){
+              if(order_info.order_id == obj[k].order_id && i == obj[k].type){
+                order_ingredients.push(obj[k]);
+              }
+            }
+
+          li = li + '<div class="panel panel-default"><div class="panel-heading">'+title+'</div><div class="panel-body"><div class="content"><ul class="list-inline">';
+          for(var j = 0; j < order_ingredients.length; j++){
+            li = li + '<li><a href="#" class="prueba_pop" id="'+order_ingredients[j].quantity+'" title="'+order_ingredients[j].name+'" data-toggle="popover" data-trigger="focus" data-content="Cantidad: '+order_ingredients[j].quantity+'"><img width="30" height="31" src="'+order_ingredients[j].image+'"/></a></li>';
+          }
+           li = li + '</ul></div></div></div>';
+         }
+        li = li + '</div><center><p><button type="button" class="btn btn-default btn-xs">Editar Orden</button>&nbsp;<button type="button" class="btn btn-default btn-xs">Pedir Orden</button></p></center></div></li>';
+        //alert(li);
+        $("#list_orderhistory").append(li);
+      });
+      }
+    });
+
+    //Get de las current orders
+    $.ajax({
+        type: "GET",
+        url: "../webservices/currentOrders.php",
+        data:  {cid:$.cookie("userInfo")},
+        dataType: 'json',
+        success: function(data){
+          if(data != ']'){
+          var obj = JSON.parse(data);
+          var orders = [];
+          for(var i = 0; i < obj.length; i++){
+            var number = obj[i].order_id;
+            var flag = false;
+            for(var j = 0; j < orders.length; j++){
+              if(number == orders[j]){
+                flag = true;
+                break;
+              }
+            }
+            if(!flag){
+              orders.push(number);
+            }
+          }
+
+          $.each(orders,function(index,element){
+
+            var order_info = "";
+            for(var i = 0; i < obj.length; i++){
+              if(element == obj[i].order_id){
+                order_info = obj[i];
+                break;
+              }
+            }
+
+            var li = '<li class="OrdersItem"><div id="container">';
+            li = li + '<center><h3><strong>Orden: </strong>'+number+'</h3></center><center><h4>₡'+order_info.total+'</h4></center><div class="progress"><div class="progress-bar progress-bar-striped progress-bar-warning active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%"></div></div><div class="panel panel-default"><div class="panel-heading">Estado Actual</div><div class="panel-body"><center><h4><strong>Ingrediente 1</strong></h4></center></div></div><br></div></li>';
+
+          $("#list_currentOrders").append(li);
+        });
+        }
+      }
+      });
   });
 
 //Evento para detectar cambios en un combobox
