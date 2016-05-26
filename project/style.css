@@ -264,5 +264,7 @@ input[type=checkbox] {
 	text-decoration: none;
 }
 
-.ingredient_list {
+#store_button{
+  background-color: #8A321F;
+  color: #fff;
 }

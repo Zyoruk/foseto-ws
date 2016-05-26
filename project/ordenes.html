@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="favicon.ico">
     <link href="bootstrap.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <link href="bootstrap-custom.css" rel="stylesheet">
@@ -35,15 +36,15 @@
             <li><a href="comentarios.html">Comentarios</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-						<li class="dropdown active" id="link_person">
-							<a href="#" id="link_person_a" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
-							<ul class="dropdown-menu">
-								<li><a href="perfil.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Mi perfil</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="#" onclick="logOut()"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Cerrar Sesión</a></li>
-							</ul>
-						</li>
-					</ul>
+            <li class="dropdown active" id="link_person">
+              <a href="#" id="link_person_a" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+              <ul class="dropdown-menu">
+                <li><a href="perfil.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Mi perfil</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#" onclick="logOut()"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Cerrar Sesión</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -64,238 +65,9 @@
               <div class="panel-body">
 
                 <div class="OrdersList" id="scrollbar_style">
-                  <ul class="list-inline">
-                    <li class="OrdersItem">
-                      <div id="container">
-                        <center><h3><strong>Combo 1</strong></h3></center>
-                        <center><h5><strong>Nombre Combo</strong></h5></center>
-                        <center><h4>₡0</h4></center>
-                        <div class="panel-group">
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Toppings</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Helados</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Adicionales</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <center>
-                          <p>
-                            <button type="button" class="btn btn-default btn-xs">Editar Orden</button>
-                            <button type="button" class="btn btn-default btn-xs">Pedir Orden</button>
-                          </p>
-                        </center>
-                      </div>
-                    </li>
-                    <li class="OrdersItem">
-                      <div id="container">
-                        <center><h3><strong>Combo 2</strong></h3></center>
-                        <center><h5><strong>Nombre Combo</strong></h5></center>
-                        <center><h4>₡0</h4></center>
-                        <div class="panel-group">
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Toppings</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Helados</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Adicionales</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <center>
-                          <p>
-                            <button type="button" class="btn btn-default btn-xs">Editar Orden</button>
-                            <button type="button" class="btn btn-default btn-xs">Pedir Orden</button>
-                          </p>
-                        </center>
-                      </div>
-                    </li>
-                    <li class="OrdersItem">
-                      <div id="container">
-                        <center><h3><strong>Combo 3</strong></h3></center>
-                        <center><h5><strong>Nombre Combo</strong></h5></center>
-                        <center><h4>₡0</h4></center>
-                        <div class="panel-group">
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Toppings</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Helados</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Adicionales</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <center>
-                          <p>
-                            <button type="button" class="btn btn-default btn-xs">Editar Orden</button>
-                            <button type="button" class="btn btn-default btn-xs">Pedir Orden</button>
-                          </p>
-                        </center>
-                      </div>
-                    </li>
-                    <li class="OrdersItem">
-                      <div id="container">
-                        <center><h3><strong>Combo 4</strong></h3></center>
-                        <center><h5><strong>Nombre Combo</strong></h5></center>
-                        <center><h4>₡0</h4></center>
-                        <div class="panel-group">
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Toppings</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Helados</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Adicionales</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <center>
-                          <p>
-                            <button type="button" class="btn btn-default btn-xs">Editar Orden</button>
-                            <button type="button" class="btn btn-default btn-xs">Pedir Orden</button>
-                          </p>
-                        </center>
-                      </div>
-                    </li>
+                  <ul class="list-inline" id = "list_combos">
                   </ul>
                 </div>
-
               </div>
             </div>
           </div>
@@ -309,229 +81,12 @@
               <div class="panel-body">
 
                 <div class="OrdersList" id="scrollbar_style">
-                  <ul class="list-inline">
-                    <li class="OrdersItem">
-                      <div id="container">
-                        <center><h3><strong>Orden 1</strong></h3></center>
-                        <center><h5><strong>1 Febrero 2016</strong></h5></center>
-                        <center><h4>₡0</h4></center>
-                        <div class="panel-group">
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Toppings</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Chispas de Chocolate" data-toggle="popover" data-trigger="focus"><img src="topping1.png" width="30" height="31" class="img-circle"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Helados</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Helado Mora" data-toggle="popover" data-trigger="focus"><img src="helado1.png" width="30" height="31" class="img-circle"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Helado Naranja" data-toggle="popover" data-trigger="focus"><img src="helado2.png" width="30" height="31" class="img-circle"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Helado Chocolate" data-toggle="popover" data-trigger="focus"><img src="helado3.png" width="30" height="31" class="img-circle"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Adicionales</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Barquillo de Vainilla" data-toggle="popover" data-trigger="focus"><img src="adicional1.png" width="30" height="31" class="img-circle"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <center>
-                          <p>
-                            <button type="button" class="btn btn-default btn-xs">Editar Orden</button>
-                            <button type="button" class="btn btn-default btn-xs">Pedir Orden</button>
-                          </p>
-                        </center>
-                      </div>
-                    </li>
-                    <li class="OrdersItem">
-                      <div id="container">
-                        <center><h3><strong>Orden 1</strong></h3></center>
-                        <center><h5><strong>1 Febrero 2016</strong></h5></center>
-                        <center><h4>₡0</h4></center>
-                        <div class="panel-group">
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Toppings</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Helados</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Adicionales</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <center>
-                          <p>
-                            <button type="button" class="btn btn-default btn-xs">Editar Orden</button>
-                            <button type="button" class="btn btn-default btn-xs">Pedir Orden</button>
-                          </p>
-                        </center>
-                      </div>
-                    </li>
-                    <li class="OrdersItem">
-                      <div id="container">
-                        <center><h3><strong>Orden 1</strong></h3></center>
-                        <center><h5><strong>1 Febrero 2016</strong></h5></center>
-                        <center><h4>₡0</h4></center>
-                        <div class="panel-group">
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Toppings</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Helados</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Adicionales</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <center>
-                          <p>
-                            <button type="button" class="btn btn-default btn-xs">Editar Orden</button>
-                            <button type="button" class="btn btn-default btn-xs">Pedir Orden</button>
-                          </p>
-                        </center>
-                      </div>
-                    </li>
-                    <li class="OrdersItem">
-                      <div id="container">
-                        <center><h3><strong>Orden 1</strong></h3></center>
-                        <center><h5><strong>1 Febrero 2016</strong></h5></center>
-                        <center><h4>₡0</h4></center>
-                        <div class="panel-group">
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Toppings</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Helados</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Helado Mora" data-toggle="popover" data-trigger="focus"><img src="helado1.png" width="30" height="31"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading">Adicionales</div>
-                            <div class="panel-body">
-                              <div class="content">
-                                <ul class="list-inline">
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 1" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 2" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Regular" title="Ingrediente 3" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Poco" title="Ingrediente 4" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                  <li><a href="#" class="prueba_pop" id="Mucho" title="Ingrediente 5" data-toggle="popover" data-trigger="focus"><img src="ingrediente.png"/></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <center>
-                          <p>
-                            <button type="button" class="btn btn-default btn-xs">Editar Orden</button>
-                            <button type="button" class="btn btn-default btn-xs">Pedir Orden</button>
-                          </p>
-                        </center>
-                      </div>
-                    </li>
+                  <ul class="list-inline" id="list_orderhistory">
                   </ul>
                 </div>
 
-              </div>
+
+</div>
             </div>
           </div>
           <div class="panel panel-default">
@@ -598,23 +153,23 @@
     </div>
 
     <span id="top-link-block">
-			<div id="trapezoid">
-				<a href="javascript:;" onclick="arrow_link()"><span class="glyphicon glyphicon-chevron-right" id="arrow_menu" aria-hidden="true"></span></a>
-			</div>
-			<div class="panel panel-default" id="panel_price">
-				<div class="panel-body" id="panel_body">
-					<p>Subtotal</p>
-					<span class="badge text_precio" id="subtotal_price">₡0</span>
-					<br>
-					<li class="dropdown" id="ingredientes_menu">
-					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="menu_hidden_title">Ingredientes <span class="caret"></span></a>
-					  <ul class="dropdown-menu pull-right scrollable-menu scrollbar_style" id="ul_ingredients">
-					  </ul>
-					</li>
+      <div id="trapezoid">
+        <a href="javascript:;" onclick="arrow_link()"><span class="glyphicon glyphicon-chevron-right" id="arrow_menu" aria-hidden="true"></span></a>
+      </div>
+      <div class="panel panel-default" id="panel_price">
+        <div class="panel-body" id="panel_body">
+          <p>Subtotal</p>
+          <span class="badge text_precio" id="subtotal_price">₡0</span>
+          <br>
+          <li class="dropdown" id="ingredientes_menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="menu_hidden_title">Ingredientes <span class="caret"></span></a>
+            <ul class="dropdown-menu pull-right scrollable-menu scrollbar_style" id="ul_ingredients">
+            </ul>
+          </li>
 
-				</div>
-			</div>
-		</span>
+        </div>
+      </div>
+    </span>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="function.js"></script>
