@@ -133,6 +133,7 @@ function editOrder(id){
   $(':radio').prop('checked',false);
   $(':radio').attr('disabled','disabled');
 
+  $('#collapse1').collapse('hide');
   $('#collapse2').collapse('hide');
   $('#collapse3').collapse('show');
   $("#top-link-block").show();
@@ -172,6 +173,7 @@ function sendOrder(){
     ingredientsSO.push(name+","+text);
   });
   if(editType == 0){
+    alert("cookie " + $.cookie("userInfo") + " ingo " + ingredientsSO + " precio " + precioTotal);
     $.ajax({
         type: "POST",
         url: "../webservices/order.php",
@@ -457,13 +459,19 @@ $(document).ready(function () {
               }
                li = li + '</ul></div></div></div>';
              }
-            li = li + '</div><center><p><button type="submmit, button" class="btn btn-default btn-xs">Editar Combo</button>&nbsp;<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modal_delOrder" data-order-id="'+order_info.order_id+'">Eliminar Combo</button></p></center></div></li>';
+
+             if($.cookie("userInfo") == 0){
+               li = li + '</div><center><p><button class="btn btn-default btn-xs editButton" value="'+order_info.order_id+'">Editar Combo</button>&nbsp;<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modal_delOrder" data-order-id="'+order_info.order_id+'">Eliminar Combo</button></p></center></div></li>';
+             }else{
+               li = li + '</div><center><p><button class="btn btn-default btn-xs editButton" value="'+order_info.order_id+'">Editar Combo</button>&nbsp<button class="btn btn-default btn-xs comboButton" value="'+order_info.order_id+'">Pedir Combo</button>';
+             }
+
             $("#list_combos").append(li);
           });
           }
         });
 
-	if($.cookie("varEdit") != null){
+	    if($.cookie("varEdit") != null){
         editOrder($.cookie("varEdit"));
         $.removeCookie("varEdit", { path: '/' });
         editType = 1;
@@ -507,8 +515,18 @@ $(document).on('click',".editExistingButton", function() {
   window.location.href = "ordenes.html";
 });
 
-$(document).on('click',".editButton", function() {
+$(document).on('click',".editButton", function(e) {
+  if($.cookie("userInfo") == 0){
+    editType = 1;
+  }
   editOrder($(this).val());
+});
+
+$(document).on('click',".comboButton", function(e) {
+  editOrder($(this).val());
+  alert("fafa");
+  sendOrder();
+
 });
 
 $('#modal_newIngredient').on('show.bs.modal', function(e) {
