@@ -1,17 +1,9 @@
 <?php
-
-$servername = "localhost";
-$username = "root"; // add your mysql username
-$password = "erick"; // add your password
-$dbname = 'foseto';
+include_once 'connect_sql.php';
 
 if (isset ($_REQUEST['cid'])){
 	$cid = $_REQUEST['cid'];
 }
-
-// Create connection
-$conn = mysql_connect ( $servername, $username, $password, TRUE );
-mysql_select_db ($dbname, $conn );
 
 $final='[' ;
 $query = "SELECT * FROM orders INNER JOIN order_ingredient ON orders.clientId ='".$cid."' AND orders.id=order_ingredient.order_id INNER JOIN ingredients on ingredients.id=order_ingredient.ingredient_id;";

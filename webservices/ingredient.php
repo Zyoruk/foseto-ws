@@ -1,5 +1,5 @@
 <?php
-//include 'connect_sql.php';
+include_once 'connect_sql.php';
 class Ingredient {
 	function checkType($type) {
 		$query = "SELECT * FROM ingredients WHERE type =" . $type . ";";
@@ -14,16 +14,6 @@ class Ingredient {
 	}
 
 	function deleteIngredient($ingid) {
-		$servername = "localhost";
-		$username = "root"; // add your mysql username
-		$password = "1807"; // add your password
-		$dbname = 'foseto';
-
-
-		// Create connection
-		$conn = mysql_connect ( $servername, $username, $password, TRUE );
-		mysql_select_db ($dbname, $conn );
-
 		$query = "DELETE FROM ingredients WHERE id=".$ingid.";";
 
 		if (! mysql_query ( $query )) {
@@ -34,17 +24,6 @@ class Ingredient {
 	}
 
 	function insertIngredient($type,$name,$price,$link){
-		$servername = "localhost";
-		$username = "root"; // add your mysql username
-		$password = "1807"; // add your password
-		$dbname = 'foseto';
-
-
-		// Create connection
-		$conn = mysql_connect ( $servername, $username, $password, TRUE );
-		mysql_select_db ($dbname, $conn );
-
-
 		$query = "INSERT INTO ingredients (type,name,available,price,image) VALUES (".$type.",'".$name."',1,".$price.",'".$link."');";
 		file_put_contents('php://stderr',print_r(" final: ".$query."\n\n\n\n\n\n" ,TRUE));
 		if (! mysql_query ( $query )) {
@@ -54,17 +33,6 @@ class Ingredient {
 	}
 
 	function editIngredient($ingid,$name,$price,$link,$available) {
-		$servername = "localhost";
-		$username = "root"; // add your mysql username
-		$password = "1807"; // add your password
-		$dbname = 'foseto';
-
-
-		// Create connection
-		$conn = mysql_connect ( $servername, $username, $password, TRUE );
-		mysql_select_db ($dbname, $conn );
-
-
 		$query = "UPDATE ingredients SET name='".$name."', price=".$price.", image ='".$link."',available=".$available." WHERE id=".$ingid.";";
 		file_put_contents('php://stderr',print_r(" final: ".$query."\n\n\n\n\n\n" ,TRUE));
 		if (! mysql_query ( $query )) {

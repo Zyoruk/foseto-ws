@@ -1,5 +1,4 @@
 <?php
-
 include_once 'connect_sql.php';
 
 $cookieName = "userInfo";
