@@ -157,6 +157,7 @@ class Order {
 
 if (isset ($_REQUEST['co']) && isset($_POST['cid']) && isset($_POST['ing']) && isset($_POST['total'])){
 	$order = new Order();
+	file_put_contents('php://stderr',print_r(" PPPPPPPPPPPPPPPPPPPPPPPPPPPP: \n\n\n\n\n\n" ,TRUE));
 	$order->CreateOrder($_POST['cid'], $_POST['ing'], $_POST['total']);
 }else if (isset($_REQUEST['god']) && isset($_REQUEST['id'])){
 	$order = new Order();
