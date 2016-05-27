@@ -173,7 +173,7 @@ function sendOrder(){
     ingredientsSO.push(name+","+text);
   });
   if(editType == 0){
-    alert("cookie " + $.cookie("userInfo") + " ingo " + ingredientsSO + " precio " + precioTotal);
+    //alert("cookie " + $.cookie("userInfo") + " ingo " + ingredientsSO + " precio " + precioTotal);
     $.ajax({
         type: "POST",
         url: "../webservices/order.php",
@@ -193,6 +193,7 @@ function sendOrder(){
         }
       });
   }
+  alert("Su orden ha sido creada con éxito.");
 }
 
 function edit_button(elem){
@@ -348,7 +349,7 @@ $(document).ready(function () {
 					}
 					li = li + '</ul></div></div></div>';
 				}
-				li = li + '</div><center><p><button type="button" data-edit="yes" class="btn btn-default btn-xs editButton" value="'+order_info.order_id+'">Editar Orden</button>&nbsp;<button type="button" class="btn btn-default btn-xs">Pedir Orden</button></p></center></div></li>';
+				li = li + '</div><center><p><button type="button" data-edit="yes" class="btn btn-default btn-xs editButton" value="'+order_info.order_id+'">Editar Orden</button>&nbsp;<button type="button" class="btn btn-default btn-xs comboButton" value="'+order_info.order_id+'">Pedir Orden</button></p></center></div></li>';
 				$("#list_orderhistory").append(li);
 			});
 		}
@@ -524,8 +525,8 @@ $(document).on('click',".editButton", function(e) {
 
 $(document).on('click',".comboButton", function(e) {
   editOrder($(this).val());
-  alert("fafa");
-  sendOrder();
+
+  setTimeout(sendOrder,1000);
 
 });
 
